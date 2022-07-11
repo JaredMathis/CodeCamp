@@ -3,6 +3,7 @@ import {ui_html_element_is} from "./../../node_modules/mykro/src/ui/html/element
 import {m_js_arguments_assert} from "./../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 export async function cc_main(parent) {
   await m_js_arguments_assert(ui_html_element_is)(arguments);
-  await cc_ui_lessons(parent);
+  let view = await ui_view(parent);
+  view.set(() => await cc_ui_lessons(parent, view));
 }
 await cc_main(document.body);
