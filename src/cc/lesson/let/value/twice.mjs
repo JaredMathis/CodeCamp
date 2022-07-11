@@ -6,7 +6,7 @@ export async function cc_lesson_let_value_twice() {
   await m_js_arguments_assert()(arguments);
   let tokens = await cc_tokens_get();
   return {
-    name: "let value; value = ...;",
+    name: "let value; value = ...; value = ...;",
     example_get: async () => {
       let shortened = await random_list_slice(tokens, 3);
       let joined = await m_js_string_join(shortened, " ");
