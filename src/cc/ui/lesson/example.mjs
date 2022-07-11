@@ -1,3 +1,4 @@
+import {list_join} from "./../../../../node_modules/mykro/src/list/join.mjs";
 import {list_add} from "./../../../../node_modules/mykro/src/list/add.mjs";
 import {list_size} from "./../../../../node_modules/mykro/src/list/size.mjs";
 import {m_js_equals} from "./../../../../node_modules/mykro/src/m/js/equals.mjs";
@@ -44,6 +45,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
       }
       await list_add(wrong_answers, wrong_answer);
     });
+    let answers = await list_join([output], wrong_answers);
   } else {
     let next_text = `Another `;
     if (is_quiz) {
