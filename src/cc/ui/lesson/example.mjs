@@ -35,7 +35,11 @@ export async function cc_ui_lesson_example(parent, example, example_number, on_n
     next_text += `Example`;
   }
   await ui_element_button_primary(container, next_text, on_next);
-  await ui_element_button_primary(container, "Enough examples! Quiz me!", on_quiz_me);
+  if (is_quiz) {
+
+  } else {
+    await ui_element_button_primary(container, "Enough examples! Quiz me!", on_quiz_me);
+  }
   return {
     container
   };
