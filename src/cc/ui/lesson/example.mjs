@@ -29,9 +29,7 @@ export async function cc_ui_lesson_example(parent, example, example_number, on_n
   await ui_element_style_monospace(output);
   await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
   await ui_element_style_background_color_border(output, "0,255,0", 0.5, 0.2);
-  let next = await ui_element_text(container, "button", "Another Example");
-  await ui_element_style_button_primary(next);
-  await ui_element_on(next, "click", on_next);
+  let next = await ui_element_button_primary(container, "Another Example", on_next)
   return {
     container
   };
