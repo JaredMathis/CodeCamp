@@ -20,6 +20,14 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
   let container = await ui_element(parent, "div");
   let example = await example_get();
+  example.output = eval(`
+  console.log = function (value) {
+    console.log.outputs.push(value);
+  }
+  console.log.outputs = [];
+  ${input}
+  console.log.outputs.join('\n');
+  `)
   container.style.margin = 0;
   let prefix = "Example";
   if (is_quiz) {

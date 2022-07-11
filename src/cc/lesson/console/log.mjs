@@ -15,7 +15,6 @@ export async function cc_lesson_console_log() {
       let joined = await m_js_string_join(shortened, " ");
       return {
         input: `console.log('${joined}');`,
-        output: joined
       };
     }
   };
