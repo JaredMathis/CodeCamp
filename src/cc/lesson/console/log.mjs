@@ -15,13 +15,8 @@ export async function cc_lesson_console_log() {
   return {
     name: "console.log(...);",
     example_get: async () => {
-      let max_words = 3;
-      let max_index = await list_max_index(tokens);
-      let max_selectable_index = max_index - (max_words - 1);
-      let start_index = await random_number(0, max_selectable_index);
-      let size = await random_number(1, max_words);
-      let starting_at = await list_starting_at(tokens, start_index);
-      let shortened = await list_take(starting_at, size);
+      let slice_size = 3;
+      let shortened = await random_list_slice(tokens, slice_size);
       let joined = await m_js_string_join(shortened, " ");
       return {
         input: `console.log('${joined}');`,
@@ -36,3 +31,13 @@ export async function cc_lesson_console_log() {
     })
   };
 }
+async function random_list_slice(tokens, max_words) {
+  let max_index = await list_max_index(tokens);
+  let max_selectable_index = max_index - (max_words - 1);
+  let start_index = await random_number(0, max_selectable_index);
+  let size = await random_number(1, max_words);
+  let starting_at = await list_starting_at(tokens, start_index);
+  let shortened = await list_take(starting_at, size);
+  return shortened;
+}
+
