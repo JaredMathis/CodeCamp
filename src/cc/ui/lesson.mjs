@@ -10,6 +10,7 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   let container = await ui_element(parent, "div");
   let span = await ui_element_text(container, "h1", "Lesson " + await m_js_property_get(lesson, "name"));
   let button= await ui_element_text(container, 'button', 'Back to Lessons');
+  await ui_element_style_button_primary(button);
   return {
     container
   };

@@ -18,10 +18,7 @@ export async function cc_ui_lessons(parent, view) {
   let list = await ui_element(container, "ul");
   await m_js_for_each(lessons, async lesson => {
     let li = await ui_element_text(list, "li", await m_js_property_get(lesson, "name"));
-    li.style.cursor = "pointer";
-    li.style.listStyleType = "none";
-    await ui_element_style_border(li, `rgba(${await ui_color_blue()}, 1)`);
-    await ui_element_style_background_color(li, await ui_color_blue(), 0.3);
+    await ui_element_style_button_primary(li);
     li.addEventListener("click", async () => {
       await view.set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {}));
     });
