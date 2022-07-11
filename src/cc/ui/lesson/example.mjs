@@ -10,8 +10,8 @@ import {m_js_defined_is} from "./../../../../node_modules/mykro/src/m/js/defined
 import {ui_html_element_is} from "./../../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 import {ui_element_html_inner_set} from "./../../../../node_modules/mykro/src/ui/element/html/inner/set.mjs";
-export async function cc_ui_lesson_example(parent, example, example_number, on_next) {
-  await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_number_is, m_js_function_is)(arguments);
+export async function cc_ui_lesson_example(parent, example, example_number, on_next, on_quiz_me) {
+  await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_number_is, m_js_function_is, m_js_function_is)(arguments);
   let container = await ui_element(parent, "div");
   container.style.margin = 0;
   await ui_element_text(container, "h1", "Example " + example_number);
@@ -28,6 +28,7 @@ export async function cc_ui_lesson_example(parent, example, example_number, on_n
   await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
   await ui_element_style_background_color_border(output, "0,255,0", 0.5, 0.2);
   await ui_element_button_primary(container, "Another Example", on_next);
+  await ui_element_button_primary(container, "Quiz me!", on_quiz_me);
   return {
     container
   };

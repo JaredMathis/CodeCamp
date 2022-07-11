@@ -30,6 +30,8 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
       return await cc_ui_lesson_example(parent, await lesson.example_get(), index + 1, function example_next() {
         index++;
         render_lesson();
+      }, function quiz_me() {
+        alert('her')
       });
     });
   }
