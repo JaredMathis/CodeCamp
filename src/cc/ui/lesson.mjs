@@ -27,7 +27,8 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   function render_lesson() {
     view.view_set(async (parent) => {
       return await cc_ui_lesson_example(parent, lesson.examples[example_index], example_index + 1, function example_next() {
-        alert("here");
+        example_index++;
+        render_lesson();
       });
     });
   }
