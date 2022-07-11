@@ -1,6 +1,4 @@
 import {cc_tokens_get} from "./../../tokens/get.mjs";
-import {random_list_slice} from "./../../../../node_modules/mykro/src/random/list/slice.mjs";
-import {m_js_string_join} from "./../../../../node_modules/mykro/src/m/js/string/join.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 export async function cc_lesson_console_log() {
   await m_js_arguments_assert()(arguments);
@@ -8,8 +6,7 @@ export async function cc_lesson_console_log() {
   return {
     name: "console.log(...);",
     example_get: async () => {
-      let shortened = await random_list_slice(tokens, 3);
-      let joined = await m_js_string_join(shortened, " ");
+      let joined = await random_list_slice_join(tokens, 3, " ");
       return {
         input: `console.log('${joined}');`
       };
