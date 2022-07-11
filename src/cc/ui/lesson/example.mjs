@@ -24,14 +24,13 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   container.style.margin = 0;
   await ui_element_text(container, "h1", "Example " + example_number);
   await ui_element_text(container, "div", "Input");
-  let input = await ui_element(container, "div");
+  let input = await ui_element_text(container, "div", await m_js_property_get(example, "input"));
   await ui_element_style_monospace(input);
-  await ui_element_html_inner_set(input, await m_js_property_get(example, "input"));
   await ui_element_style_background_color_border(input, "0,0,0", 1, 1);
   input.style.overflowWrap = "break-word";
   input.style.color = "white";
   await ui_element_text(container, "div", "Output");
-  let output = await m_js_property_get(example, "output");
+  let answer = await m_js_property_get(example, "output");
   if (is_quiz) {
     let wrong_answers = [];
     let wrong_answers_count = 3;
@@ -41,13 +40,14 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
       }
       let wrong = await example_get();
       let wrong_answer = await m_js_property_get(wrong, "output");
-      if (m_js_equals(wrong_answer, output)) {
+      if (m_js_equals(wrong_answer, answer)) {
         return false;
       }
       await list_add(wrong_answers, wrong_answer);
     });
-    let answers = await list_join([output], wrong_answers);
+    let answers = await list_join([answer], wrong_answers);
     await random_list_shuffle(answers);
+    console.log({answers})
   } else {
     let next_text = `Another `;
     if (is_quiz) {
@@ -55,9 +55,8 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     } else {
       next_text += `Example`;
     }
-    let output = await ui_element(container, "div");
+    let output = await ui_element_text(container, "div", answer);
     await ui_element_style_monospace(output);
-    await ui_element_html_inner_set(output);
     await ui_element_style_background_color_border(output, "0,255,0", 0.5, 0.2);
     await ui_element_button_primary(container, next_text, on_next);
     await ui_element_button_primary(container, "Enough examples! Quiz me!", on_quiz_me);
