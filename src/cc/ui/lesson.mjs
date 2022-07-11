@@ -35,7 +35,7 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
         is_quiz = true;
         index = 0;
         render_lesson();
-      });
+      }, is_quiz);
     });
   }
 }
