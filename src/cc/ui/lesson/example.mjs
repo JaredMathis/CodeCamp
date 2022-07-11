@@ -16,6 +16,7 @@ import {ui_element} from "./../../../../node_modules/mykro/src/ui/element.mjs";
 import {ui_html_element_is} from "./../../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 import {m_js_for_each} from "./../../../../node_modules/mykro/src/m/js/for/each.mjs";
+import {m_js_string_split} from "./../../../../node_modules/mykro/src/m/js/string/split.mjs";
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
   let container = await ui_element(parent, "div");
@@ -25,12 +26,16 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   container.style.margin = 0;
   let prefix = "Example";
   if (is_quiz) {
-    prefix = 'Question'
+    prefix = "Question";
   }
   await ui_element_text(container, "h1", prefix + " " + example_number);
   await ui_element_text(container, "div", "Input");
   const input_text = await m_js_property_get(example, "input");
+  let input_lines = await m_js_string_split(input_text, "\n");
   let input = await ui_element_text(container, "div", input_text);
+  await for_each(input_lines, async line => {
+    await ui_element_text(input, "div", line);
+  });
   await ui_element_style_monospace(input);
   await ui_element_style_background_color_border(input, "0,0,0", 1, 1);
   input.style.overflowWrap = "break-word";
@@ -88,4 +93,3 @@ function cc_example_output_generate(example) {
   console.log(code);
   example.output = eval(code);
 }
-
