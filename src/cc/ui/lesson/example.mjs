@@ -1,4 +1,3 @@
-import {noop} from "./../../../../node_modules/mykro/src/noop.mjs";
 import {random_list_shuffle} from "./../../../../node_modules/mykro/src/random/list/shuffle.mjs";
 import {list_join} from "./../../../../node_modules/mykro/src/list/join.mjs";
 import {list_add} from "./../../../../node_modules/mykro/src/list/add.mjs";
