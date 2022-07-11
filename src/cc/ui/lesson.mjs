@@ -1,3 +1,4 @@
+import {ui_element_style_button_secondary} from "./../../../node_modules/mykro/src/ui/element/style/button/secondary.mjs";
 import {ui_element_style_button_primary} from "./../../../node_modules/mykro/src/ui/element/style/button/primary.mjs";
 import {ui_element} from "./../../../node_modules/mykro/src/ui/element.mjs";
 import {ui_element_text} from "./../../../node_modules/mykro/src/ui/element/text.mjs";
@@ -12,7 +13,7 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   let span = await ui_element_text(container, "h1", "Lesson " + await m_js_property_get(lesson, "name"));
   let button = await ui_element_text(container, "button", "Back to Lessons");
   button.addEventListener("click", go_back);
-  await ui_element_style_button_primary(button);
+  await ui_element_style_button_secondary(button);
   return {
     container
   };
