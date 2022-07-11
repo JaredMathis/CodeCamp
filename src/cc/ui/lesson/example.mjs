@@ -1,3 +1,4 @@
+import {list_add} from "./../../../../node_modules/mykro/src/list/add.mjs";
 import {list_size} from "./../../../../node_modules/mykro/src/list/size.mjs";
 import {m_js_equals} from "./../../../../node_modules/mykro/src/m/js/equals.mjs";
 import {list_range} from "./../../../../node_modules/mykro/src/list/range.mjs";
@@ -35,6 +36,8 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
       if ((m_js_equals(await list_size(wrong_answers)), wrong_answers_count)) {
         return true;
       }
+      let wrong_answer = {};
+      await list_add(wrong_answers, wrong_answer);
     });
   } else {
     let next_text = `Another `;
