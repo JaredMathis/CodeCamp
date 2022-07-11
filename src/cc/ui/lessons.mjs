@@ -1,3 +1,4 @@
+import {cc_ui_lesson} from "./lesson.mjs";
 import {m_js_defined_is} from "./../../../node_modules/mykro/src/m/js/defined/is.mjs";
 import {ui_element_style_background_color} from "./../../../node_modules/mykro/src/ui/element/style/background/color.mjs";
 import {ui_color_blue} from "./../../../node_modules/mykro/src/ui/color/blue.mjs";
@@ -21,7 +22,7 @@ export async function cc_ui_lessons(parent, view) {
     li.style.listStyleType = "none";
     await ui_element_style_border(li, `rgba(${await ui_color_blue()}, 1)`);
     await ui_element_style_background_color(li, await ui_color_blue(), 0.3);
-    li.addEventListener('click', async () => {
+    li.addEventListener("click", async () => {
       await view.set(async () => await cc_ui_lesson(parent, lesson));
     });
   });
