@@ -12,7 +12,7 @@ export async function cc_main(parent) {
   let span = await ui_element_text(parent, "h1", "Lessons");
   let list = await ui_element(parent, "ul");
   await m_js_for_each(lessons, async lesson => {
-    await ui_element_text(list, "li", await m_js_property_get(lesson, "name"));
+    let li = await ui_element_text(list, "li", await m_js_property_get(lesson, "name"));
   });
 }
 await cc_main(document.body);
