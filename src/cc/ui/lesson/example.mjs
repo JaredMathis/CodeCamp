@@ -9,8 +9,8 @@ import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/a
 import {ui_element_html_inner_set} from "./../../../../node_modules/mykro/src/ui/element/html/inner/set.mjs";
 export async function cc_ui_lesson_example(parent, example, example_number) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_number_is)(arguments);
-  await ui_element_text(container, "h1", "Example " + await m_js_property_get(lesson, "name"));
   let container = await ui_element(parent, "div");
+  await ui_element_text(container, "h1", "Example " + example_number);
   let input = await ui_element(container, "div");
   await ui_element_style_monospace(input);
   await ui_element_html_inner_set(input, await m_js_property_get(example, "input"));
