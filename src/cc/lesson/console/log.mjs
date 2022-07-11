@@ -2,6 +2,7 @@ import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/a
 export async function cc_lesson_console_log() {
   await m_js_arguments_assert()(arguments);
   return {
+    name: "console.log(...);",
     examples: [
       {
         "input": "console.log('Hello')",
