@@ -6,6 +6,6 @@ export async function cc_main() {
   await m_js_arguments_assert()(arguments);
   let lessons = await cc_lessons_get();
   let span = await ui_element(document.body, "span");
-  await ui_element_html_inner_set(span, "hi");
+  await ui_element_html_inner_set(span, "Lessons");
 }
 await cc_main();
