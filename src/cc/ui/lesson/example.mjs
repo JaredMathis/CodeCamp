@@ -10,7 +10,7 @@ export async function cc_ui_lesson_example(parent, example) {
   let input = await ui_element(container, "div");
   await ui_element_html_inner_set(input, await m_js_property_get(example, "input"));
   let output = await ui_element(container, "div");
-  await ui_element_html_inner_set(container, await m_js_property_get(output, "output"));
+  await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
   return {
     container
   };
