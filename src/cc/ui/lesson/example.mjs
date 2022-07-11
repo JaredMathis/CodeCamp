@@ -15,6 +15,9 @@ export async function cc_ui_lesson_example(parent, example, example_number) {
   let input = await ui_element(container, "div");
   await ui_element_style_monospace(input);
   await ui_element_html_inner_set(input, await m_js_property_get(example, "input"));
+  await ui_element_style_background_color_border(input, "0,0,0", 1, 1);
+  input.style.overflowWrap = 'break-word';
+  input.style.color = 'white'
   let output = await ui_element(container, "div");
   await ui_element_style_monospace(output);
   await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
