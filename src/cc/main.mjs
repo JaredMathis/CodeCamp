@@ -16,6 +16,7 @@ export async function cc_main(parent) {
   let list = await ui_element(parent, "ul");
   await m_js_for_each(lessons, async lesson => {
     let li = await ui_element_text(list, "li", await m_js_property_get(lesson, "name"));
+    li.style.cursor = 'pointer';
     li.style.listStyleType = "none";
     await ui_element_style_border(li, `rgba(${await ui_color_blue()}, 1)`);
     await ui_element_style_background_color(li, await ui_color_blue(), 0.3);
