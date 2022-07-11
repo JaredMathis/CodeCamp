@@ -18,6 +18,7 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   await ui_element_text(container, "h1", "Lesson: " + await m_js_property_get(lesson, "name"));
   let view = await ui_view(container);
   let index = 0;
+  let is_quiz = false;
   render_lesson();
   let back = await ui_element_text(container, "button", "Back to Lessons");
   await ui_element_style_button_secondary(back);
@@ -31,7 +32,9 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
         index++;
         render_lesson();
       }, function quiz_me() {
-        alert('her')
+        is_quiz = true;
+        index = 0;
+        render_lesson();
       });
     });
   }
