@@ -1,7 +1,6 @@
 import {cc_tokens_get} from "./../../tokens/get.mjs";
 import {random_list_slice} from "./../../../../node_modules/mykro/src/random/list/slice.mjs";
 import {m_js_string_join} from "./../../../../node_modules/mykro/src/m/js/string/join.mjs";
-import {m_js_string_split} from "./../../../../node_modules/mykro/src/m/js/string/split.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 export async function cc_lesson_console_log() {
   await m_js_arguments_assert()(arguments);
