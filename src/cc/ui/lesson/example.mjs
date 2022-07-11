@@ -1,3 +1,4 @@
+import {ui_element_style_background_color_border} from "./../../../../node_modules/mykro/src/ui/element/style/background/color/border.mjs";
 import {ui_element_text} from "./../../../../node_modules/mykro/src/ui/element/text.mjs";
 import {m_js_number_is} from "./../../../../node_modules/mykro/src/m/js/number/is.mjs";
 import {ui_element_style_monospace} from "./../../../../node_modules/mykro/src/ui/element/style/monospace.mjs";
@@ -17,6 +18,7 @@ export async function cc_ui_lesson_example(parent, example, example_number) {
   let output = await ui_element(container, "div");
   await ui_element_style_monospace(output);
   await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
+  await ui_element_style_background_color_border(output, "1,1,1", 0.1, 0.1);
   return {
     container
   };

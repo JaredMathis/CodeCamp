@@ -12,7 +12,7 @@ import {ui_view} from "./../../../node_modules/mykro/src/ui/view.mjs";
 export async function cc_ui_lesson(parent, lesson, go_back) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_function_is)(arguments);
   let container = await ui_element(parent, "div");
-  await ui_element_text(container, "h1", "Lesson " + await m_js_property_get(lesson, "name"));
+  await ui_element_text(container, "h1", "Lesson: " + await m_js_property_get(lesson, "name"));
   let view = await ui_view(container);
   view.view_set(async (parent) => {
     return await cc_ui_lesson_example(parent, lesson.examples[0], 1);
