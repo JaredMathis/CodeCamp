@@ -1,3 +1,4 @@
+import {ui_element_style_monospace} from "./../../../../node_modules/mykro/src/ui/element/style/monospace.mjs";
 import {m_js_property_get} from "./../../../../node_modules/mykro/src/m/js/property/get.mjs";
 import {ui_element} from "./../../../../node_modules/mykro/src/ui/element.mjs";
 import {m_js_defined_is} from "./../../../../node_modules/mykro/src/m/js/defined/is.mjs";
