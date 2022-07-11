@@ -7,7 +7,6 @@ import {m_js_number_is} from "./../../../../node_modules/mykro/src/m/js/number/i
 import {ui_element_style_monospace} from "./../../../../node_modules/mykro/src/ui/element/style/monospace.mjs";
 import {m_js_property_get} from "./../../../../node_modules/mykro/src/m/js/property/get.mjs";
 import {ui_element} from "./../../../../node_modules/mykro/src/ui/element.mjs";
-import {m_js_defined_is} from "./../../../../node_modules/mykro/src/m/js/defined/is.mjs";
 import {ui_html_element_is} from "./../../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 import {ui_element_html_inner_set} from "./../../../../node_modules/mykro/src/ui/element/html/inner/set.mjs";
