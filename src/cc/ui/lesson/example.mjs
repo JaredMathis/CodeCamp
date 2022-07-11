@@ -1,3 +1,6 @@
+import {list_size} from "./../../../../node_modules/mykro/src/list/size.mjs";
+import {m_js_equals} from "./../../../../node_modules/mykro/src/m/js/equals.mjs";
+import {list_range} from "./../../../../node_modules/mykro/src/list/range.mjs";
 import {m_js_boolean_is} from "./../../../../node_modules/mykro/src/m/js/boolean/is.mjs";
 import {ui_element_button_primary} from "./../../../../node_modules/mykro/src/ui/element/button/primary.mjs";
 import {m_js_function_is} from "./../../../../node_modules/mykro/src/m/js/function/is.mjs";
@@ -10,7 +13,7 @@ import {ui_element} from "./../../../../node_modules/mykro/src/ui/element.mjs";
 import {ui_html_element_is} from "./../../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 import {ui_element_html_inner_set} from "./../../../../node_modules/mykro/src/ui/element/html/inner/set.mjs";
-import { m_js_for_each } from ".mykro/src/m/js/for/each.mjs";
+import {m_js_for_each} from "./../../../../node_modules/mykro/src/m/js/for/each.mjs";
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
   let container = await ui_element(parent, "div");
@@ -29,10 +32,10 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     let wrong_answers = [];
     let wrong_answers_count = 3;
     await m_js_for_each(await list_range(100), async () => {
-      if (m_js_equals(await list_size(wrong_answers)), wrong_answers_count) {
+      if ((m_js_equals(await list_size(wrong_answers)), wrong_answers_count)) {
         return true;
       }
-    })
+    });
   } else {
     let next_text = `Another `;
     if (is_quiz) {
