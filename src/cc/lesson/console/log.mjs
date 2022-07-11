@@ -8,6 +8,7 @@ export async function cc_lesson_console_log() {
   return {
     name: "console.log(...);",
     example_get: () => {
+      let size = await list_size(tokens);
       return {
         input: ``,
         output: ``,
