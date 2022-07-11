@@ -23,7 +23,11 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   let container = await ui_element(parent, "div");
   let example = await example_get();
   container.style.margin = 0;
-  await ui_element_text(container, "h1", "Example " + example_number);
+  let prefix = "Example";
+  if (is_quiz) {
+    prefix = 'Question'
+  }
+  await ui_element_text(container, "h1", prefix + " " + example_number);
   await ui_element_text(container, "div", "Input");
   let input = await ui_element_text(container, "div", await m_js_property_get(example, "input"));
   await ui_element_style_monospace(input);
