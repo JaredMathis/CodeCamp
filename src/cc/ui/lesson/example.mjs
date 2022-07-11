@@ -1,3 +1,4 @@
+import {noop} from "./../../../../node_modules/mykro/src/noop.mjs";
 import {random_list_shuffle} from "./../../../../node_modules/mykro/src/random/list/shuffle.mjs";
 import {list_join} from "./../../../../node_modules/mykro/src/list/join.mjs";
 import {list_add} from "./../../../../node_modules/mykro/src/list/add.mjs";
@@ -35,7 +36,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     let wrong_answers = [];
     let wrong_answers_count = 3;
     await m_js_for_each(await list_range(100), async () => {
-      if ((m_js_equals(await list_size(wrong_answers)), wrong_answers_count)) {
+      if (m_js_equals(await list_size(wrong_answers), wrong_answers_count)) {
         return true;
       }
       let wrong = await example_get();
@@ -47,8 +48,8 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     });
     let answers = await list_join([[answer], wrong_answers]);
     await random_list_shuffle(answers);
-    console.log({
-      answers
+    await m_js_for_each(answers, async answer => {
+      await ui_element_button_primary(container, answer, noop);
     });
   } else {
     let next_text = `Another `;
