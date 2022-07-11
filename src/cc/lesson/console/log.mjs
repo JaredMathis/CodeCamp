@@ -31,13 +31,4 @@ export async function cc_lesson_console_log() {
     })
   };
 }
-async function random_list_slice(list, slice_size) {
-  let max_index = await list_max_index(list);
-  let max_selectable_index = max_index - (slice_size - 1);
-  let start_index = await random_number(0, max_selectable_index);
-  let size = await random_number(1, slice_size);
-  let starting_at = await list_starting_at(list, start_index);
-  let shortened = await list_take(starting_at, size);
-  return shortened;
-}
 
