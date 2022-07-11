@@ -6,7 +6,7 @@ import {ui_element_html_inner_set} from "./../../../../node_modules/mykro/src/ui
 export async function cc_ui_lesson_example(parent, lesson) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is)(arguments);
   let container = await ui_element(parent, "div");
-  ui_element_html_inner_set(container, "test");
+  await ui_element_html_inner_set(container, "test");
   return {
     container
   };
