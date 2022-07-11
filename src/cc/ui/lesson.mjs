@@ -1,3 +1,4 @@
+import {ui_element_style_button_primary} from "./../../../node_modules/mykro/src/ui/element/style/button/primary.mjs";
 import {ui_element} from "./../../../node_modules/mykro/src/ui/element.mjs";
 import {ui_element_text} from "./../../../node_modules/mykro/src/ui/element/text.mjs";
 import {ui_html_element_is} from "./../../../node_modules/mykro/src/ui/html/element/is.mjs";
@@ -9,7 +10,7 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_function_is)(arguments);
   let container = await ui_element(parent, "div");
   let span = await ui_element_text(container, "h1", "Lesson " + await m_js_property_get(lesson, "name"));
-  let button= await ui_element_text(container, 'button', 'Back to Lessons');
+  let button = await ui_element_text(container, "button", "Back to Lessons");
   await ui_element_style_button_primary(button);
   return {
     container
