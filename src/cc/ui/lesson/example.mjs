@@ -1,3 +1,4 @@
+import {m_js_function_is} from "./../../../../node_modules/mykro/src/m/js/function/is.mjs";
 import {ui_element_style_background_color_border} from "./../../../../node_modules/mykro/src/ui/element/style/background/color/border.mjs";
 import {ui_element_text} from "./../../../../node_modules/mykro/src/ui/element/text.mjs";
 import {m_js_number_is} from "./../../../../node_modules/mykro/src/m/js/number/is.mjs";
