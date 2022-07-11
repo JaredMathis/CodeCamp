@@ -17,12 +17,6 @@ export async function cc_lesson_console_log() {
         input: `console.log('${joined}');`,
         output: joined
       };
-    },
-    examples: await list_map(["Hello", "ABC", "Jesus is Lord"], item => {
-      return {
-        "input": `console.log('${item}');`,
-        "output": `${item}`
-      };
-    })
+    }
   };
 }
