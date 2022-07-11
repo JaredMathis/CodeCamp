@@ -21,6 +21,9 @@ export async function cc_ui_lessons(parent, view) {
     li.style.listStyleType = "none";
     await ui_element_style_border(li, `rgba(${await ui_color_blue()}, 1)`);
     await ui_element_style_background_color(li, await ui_color_blue(), 0.3);
+    li.addEventListener('click', async () => {
+      await view.set(async () => await cc_ui_lesson(lesson));
+    });
   });
   return {
     container
