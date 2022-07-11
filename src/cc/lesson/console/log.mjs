@@ -7,7 +7,12 @@ export async function cc_lesson_console_log() {
   let tokens = m_js_string_split(verse, " ");
   return {
     name: "console.log(...);",
-    example_get: () => {},
+    example_get: () => {
+      return {
+        input: ``,
+        output: ``,
+      }
+    },
     examples: await list_map(["Hello", "ABC", "Jesus is Lord"], item => {
       return {
         "input": `console.log('${item}');`,
