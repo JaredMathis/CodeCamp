@@ -8,9 +8,9 @@ import {cc_lessons_get} from "./lessons/get.mjs";
 export async function cc_main(parent) {
   await m_js_arguments_assert(ui_html_element_is)(arguments);
   let lessons = await cc_lessons_get();
-  let span = await ui_element_text(parent, "span", "Lessons");
+  let span = await ui_element_text(parent, "ol", "Lessons");
   await m_js_for_each(lessons, async lesson => {
-    await ui_element_text(parent, "span", await m_js_property_get(lesson, "name"));
+    await ui_element_text(parent, "li", await m_js_property_get(lesson, "name"));
   });
 }
 await cc_main(document.body);
