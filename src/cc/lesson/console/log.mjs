@@ -4,7 +4,7 @@ export async function cc_lesson_console_log() {
   await m_js_arguments_assert()(arguments);
   return {
     name: "console.log(...);",
-    examples: await list_map(["Greetings!!!", "Jesus is Lord", "Jesus rose from the dead"], item => {
+    examples: await list_map(["Hello", "ABC", "Jesus is Lord"], item => {
       return {
         "input": `console.log('${item}');`,
         "output": `${item}`
