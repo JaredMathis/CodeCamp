@@ -1,5 +1,4 @@
 import {ui_element_button_primary} from "./../../../node_modules/mykro/src/ui/element/button/primary.mjs";
-import {ui_element_style_button_primary} from "./../../../node_modules/mykro/src/ui/element/style/button/primary.mjs";
 import {cc_ui_lesson} from "./lesson.mjs";
 import {m_js_defined_is} from "./../../../node_modules/mykro/src/m/js/defined/is.mjs";
 import {m_js_property_get} from "./../../../node_modules/mykro/src/m/js/property/get.mjs";
