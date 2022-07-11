@@ -10,9 +10,10 @@ import {ui_html_element_is} from "./../../../node_modules/mykro/src/ui/html/elem
 import {m_js_arguments_assert} from "./../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 export async function cc_ui_lessons(parent) {
   await m_js_arguments_assert(ui_html_element_is)(arguments);
+  let container = await ui_element(parent, 'div');
   let lessons = await cc_lessons_get();
-  let span = await ui_element_text(parent, "h1", "Lessons");
-  let list = await ui_element(parent, "ul");
+  let span = await ui_element_text(container, "h1", "Lessons");
+  let list = await ui_element(container, "ul");
   await m_js_for_each(lessons, async lesson => {
     let li = await ui_element_text(list, "li", await m_js_property_get(lesson, "name"));
     li.style.cursor = "pointer";
@@ -20,4 +21,7 @@ export async function cc_ui_lessons(parent) {
     await ui_element_style_border(li, `rgba(${await ui_color_blue()}, 1)`);
     await ui_element_style_background_color(li, await ui_color_blue(), 0.3);
   });
+  return {
+    container
+  }
 }
