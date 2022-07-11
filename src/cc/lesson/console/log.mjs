@@ -4,8 +4,7 @@ import {m_js_string_split} from "./../../../../node_modules/mykro/src/m/js/strin
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 export async function cc_lesson_console_log() {
   await m_js_arguments_assert()(arguments);
-  let verse = `For God so loved the world that he gave his only Son so that everyone who believes in him may not perish but may have eternal life`;
-  let tokens = await m_js_string_split(verse, " ");
+  let tokens = await cc_tokens_get();
   return {
     name: "console.log(...);",
     example_get: async () => {
@@ -17,3 +16,9 @@ export async function cc_lesson_console_log() {
     }
   };
 }
+async function cc_tokens_get() {
+  let verse = `For God so loved the world that he gave his only Son so that everyone who believes in him may not perish but may have eternal life`;
+  let tokens = await m_js_string_split(verse, " ");
+  return tokens;
+}
+
