@@ -8,8 +8,10 @@ export async function cc_lesson_console_log() {
   return {
     name: "console.log(...);",
     example_get: () => {
+      let max_words = 3;
       let size = await list_size(tokens);
       let max_index = size - 1;
+      let max_selectable_index = max_index - (max_words - 1);
       return {
         input: ``,
         output: ``,
