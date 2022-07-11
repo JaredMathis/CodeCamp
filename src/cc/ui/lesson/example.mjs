@@ -8,8 +8,10 @@ export async function cc_ui_lesson_example(parent, example) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is)(arguments);
   let container = await ui_element(parent, "div");
   let input = await ui_element(container, "div");
+  await ui_element_style_monospace(input);
   await ui_element_html_inner_set(input, await m_js_property_get(example, "input"));
   let output = await ui_element(container, "div");
+  await ui_element_style_monospace(output);
   await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
   return {
     container

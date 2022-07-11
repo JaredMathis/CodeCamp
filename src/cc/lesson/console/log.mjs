@@ -6,7 +6,7 @@ export async function cc_lesson_console_log() {
     name: "console.log(...);",
     examples: await list_map(["Greetings!!!", "Jesus is Lord", "Jesus rose from the dead"], item => {
       return {
-        "input": `console.log('${item}')`,
+        "input": `console.log('${item}');`,
         "output": `${item}`
       };
     })
