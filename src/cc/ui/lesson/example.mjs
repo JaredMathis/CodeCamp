@@ -61,12 +61,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
       await ui_element_style_monospace(answer_button);
     });
   } else {
-    let next_text = `Another `;
-    if (is_quiz) {
-      next_text += `Question`;
-    } else {
-      next_text += `Example`;
-    }
+    let next_text = `Another Example`;
     let output = await ui_element_text(container, "div", answer_right);
     await ui_element_style_monospace(output);
     await ui_element_style_background_color_border(output, "0,255,0", 0.5, 0.2);
