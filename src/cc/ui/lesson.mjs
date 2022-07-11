@@ -11,9 +11,9 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_function_is)(arguments);
   let container = await ui_element(parent, "div");
   let span = await ui_element_text(container, "h1", "Lesson " + await m_js_property_get(lesson, "name"));
-  let button = await ui_element_text(container, "button", "Back to Lessons");
-  await ui_element_style_button_secondary(button);
-  button.addEventListener("click", go_back);
+  let back = await ui_element_text(container, "button", "Back to Lessons");
+  await ui_element_style_button_secondary(back);
+  back.addEventListener("click", go_back);
   return {
     container
   };
