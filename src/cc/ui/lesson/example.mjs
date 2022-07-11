@@ -19,6 +19,7 @@ import {m_js_for_each} from "./../../../../node_modules/mykro/src/m/js/for/each.
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
   let container = await ui_element(parent, "div");
+  container.style.margin = 0;
   let example = await example_get();
   example.output = eval(`
   console.log = function (value) {
