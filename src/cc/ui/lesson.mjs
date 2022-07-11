@@ -17,7 +17,7 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   let container = await ui_element(parent, "div");
   await ui_element_text(container, "h1", "Lesson: " + await m_js_property_get(lesson, "name"));
   let view = await ui_view(container);
-  let example_index = 0;
+  let index = 0;
   render_lesson();
   let back = await ui_element_text(container, "button", "Back to Lessons");
   await ui_element_style_button_secondary(back);
@@ -27,8 +27,8 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   };
   function render_lesson() {
     view.view_set(async parent => {
-      return await cc_ui_lesson_example(parent, await lesson.example_get(), example_index + 1, function example_next() {
-        example_index++;
+      return await cc_ui_lesson_example(parent, await lesson.example_get(), index + 1, function example_next() {
+        index++;
         render_lesson();
       });
     });
