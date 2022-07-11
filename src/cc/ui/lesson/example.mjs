@@ -47,7 +47,9 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     });
     let answers = await list_join([answer], wrong_answers);
     await random_list_shuffle(answers);
-    console.log({answers})
+    console.log({
+      answers
+    });
   } else {
     let next_text = `Another `;
     if (is_quiz) {
