@@ -1,3 +1,5 @@
+import {list_size} from "./../../../node_modules/mykro/src/list/size.mjs";
+import {m_js_equals} from "./../../../node_modules/mykro/src/m/js/equals.mjs";
 import {ui_element_on} from "./../../../node_modules/mykro/src/ui/element/on.mjs";
 import {cc_ui_lesson_example} from "./lesson/example.mjs";
 import {ui_element_style_button_secondary} from "./../../../node_modules/mykro/src/ui/element/style/button/secondary.mjs";
@@ -23,9 +25,8 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   return {
     container
   };
-
   function render_lesson() {
-    view.view_set(async (parent) => {
+    view.view_set(async parent => {
       return await cc_ui_lesson_example(parent, lesson.examples[example_index], example_index + 1, function example_next() {
         example_index++;
         render_lesson();
