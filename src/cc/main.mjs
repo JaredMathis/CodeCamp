@@ -15,7 +15,7 @@ export async function cc_main(parent) {
   await m_js_for_each(lessons, async lesson => {
     let li = await ui_element_text(list, "li", await m_js_property_get(lesson, "name"));
     li.style.listStyleType = "none";
-    await ui_element_style_border(li, 'black');
+    await ui_element_style_border(li, 'blue');
   });
 }
 await cc_main(document.body);
