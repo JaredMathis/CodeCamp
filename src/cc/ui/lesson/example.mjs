@@ -45,7 +45,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
       }
       await list_add(wrong_answers, wrong_answer);
     });
-    let answers = await list_join([answer], wrong_answers);
+    let answers = await list_join([[answer], wrong_answers]);
     await random_list_shuffle(answers);
     console.log({
       answers
