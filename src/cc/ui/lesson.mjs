@@ -1,3 +1,4 @@
+import {ui_element_on} from "./../../../node_modules/mykro/src/ui/element/on.mjs";
 import {cc_ui_lesson_example} from "./lesson/example.mjs";
 import {ui_element_style_button_secondary} from "./../../../node_modules/mykro/src/ui/element/style/button/secondary.mjs";
 import {ui_element_style_button_primary} from "./../../../node_modules/mykro/src/ui/element/style/button/primary.mjs";
@@ -15,14 +16,14 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   await ui_element_text(container, "h1", "Lesson: " + await m_js_property_get(lesson, "name"));
   let view = await ui_view(container);
   let example_index = 0;
-  view.view_set(async (parent) => {
+  view.view_set(async parent => {
     return await cc_ui_lesson_example(parent, lesson.examples[example_index], example_index + 1, function example_next() {
-      alert('here')
+      alert("here");
     });
   });
   let back = await ui_element_text(container, "button", "Back to Lessons");
   await ui_element_style_button_secondary(back);
-  back.addEventListener("click", go_back);
+  await ui_element_on(back, "click", go_back);
   return {
     container
   };
