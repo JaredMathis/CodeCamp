@@ -30,7 +30,7 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
       return await cc_ui_lesson_example(parent, await lesson.example_get(), example_index + 1, function example_next() {
         example_index++;
         render_lesson();
-      }, false);
+      });
     });
   }
 }
