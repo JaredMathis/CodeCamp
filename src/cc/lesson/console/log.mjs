@@ -10,8 +10,7 @@ export async function cc_lesson_console_log() {
   return {
     name: "console.log(...);",
     example_get: async () => {
-      let slice_size = 3;
-      let shortened = await random_list_slice(tokens, slice_size);
+      let shortened = await random_list_slice(tokens, 3);
       let joined = await m_js_string_join(shortened, " ");
       return {
         input: `console.log('${joined}');`,
