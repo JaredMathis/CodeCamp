@@ -1,3 +1,4 @@
+import {random_list_slice} from "./../../../../node_modules/mykro/src/random/list/slice.mjs";
 import {list_take} from "./../../../../node_modules/mykro/src/list/take.mjs";
 import {m_js_string_join} from "./../../../../node_modules/mykro/src/m/js/string/join.mjs";
 import {list_join} from "./../../../../node_modules/mykro/src/list/join.mjs";
@@ -31,4 +32,3 @@ export async function cc_lesson_console_log() {
     })
   };
 }
-
