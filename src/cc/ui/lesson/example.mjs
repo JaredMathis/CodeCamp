@@ -16,7 +16,6 @@ import {m_js_property_get} from "./../../../../node_modules/mykro/src/m/js/prope
 import {ui_element} from "./../../../../node_modules/mykro/src/ui/element.mjs";
 import {ui_html_element_is} from "./../../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
-import {ui_element_html_inner_set} from "./../../../../node_modules/mykro/src/ui/element/html/inner/set.mjs";
 import {m_js_for_each} from "./../../../../node_modules/mykro/src/m/js/for/each.mjs";
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
