@@ -24,12 +24,10 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   input.style.overflowWrap = "break-word";
   input.style.color = "white";
   await ui_element_text(container, "div", "Output");
-  let output = await ui_element(container, "div");
-  await ui_element_style_monospace(output);
-  await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
-  await ui_element_style_background_color_border(output, "0,255,0", 0.5, 0.2);
+
 
   if (is_quiz) {
+    
 
   } else {
     let next_text = `Another `;
@@ -38,6 +36,10 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     } else {
       next_text += `Example`;
     }
+    let output = await ui_element(container, "div");
+    await ui_element_style_monospace(output);
+    await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
+    await ui_element_style_background_color_border(output, "0,255,0", 0.5, 0.2);
     await ui_element_button_primary(container, next_text, on_next);
     await ui_element_button_primary(container, "Enough examples! Quiz me!", on_quiz_me);
   }
