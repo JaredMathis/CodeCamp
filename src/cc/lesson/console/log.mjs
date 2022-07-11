@@ -9,6 +9,7 @@ export async function cc_lesson_console_log() {
     name: "console.log(...);",
     example_get: () => {
       let size = await list_size(tokens);
+      let max_index = size - 1;
       return {
         input: ``,
         output: ``,
