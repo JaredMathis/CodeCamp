@@ -9,7 +9,7 @@ export async function cc_main(parent) {
   let lessons = await cc_lessons_get();
   let span = await ui_element_text(parent, "span", "Lessons");
   await m_js_for_each(lessons, async lesson => {
-    await ui_element_text(parent, await json_to(lesson));
+    await ui_element_text(parent, "span", await json_to(lesson));
   });
 }
 await cc_main(document.body);
