@@ -21,8 +21,8 @@ export async function cc_ui_lessons(parent, view) {
     let li = await ui_element_text(list, "li", await m_js_property_get(lesson, "name"));
     await ui_element_style_button_primary(li);
     li.addEventListener("click", async () => {
-      await view.set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {
-        await view.set(async () => await cc_ui_lessons(parent, view))
+      await view.view_set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {
+        await view.view_set(async () => await cc_ui_lessons(parent, view))
       }));
     });
   });
