@@ -29,7 +29,8 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   }
   await ui_element_text(container, "h1", prefix + " " + example_number);
   await ui_element_text(container, "div", "Input");
-  let input = await ui_element_text(container, "div", await m_js_property_get(example, "input"));
+  const input_text = await m_js_property_get(example, "input");
+  let input = await ui_element_text(container, "div", input_text);
   await ui_element_style_monospace(input);
   await ui_element_style_background_color_border(input, "0,0,0", 1, 1);
   input.style.overflowWrap = "break-word";
