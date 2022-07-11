@@ -8,6 +8,6 @@ export async function cc_lesson_console_log() {
         "input": `console.log('${item}')`,
         "output": `${item}`
       }
-    }
+    }),
   }
 }
