@@ -7,5 +7,8 @@ export async function cc_main() {
   let lessons = await cc_lessons_get();
   let span = await ui_element(parent, "span");
   await ui_element_html_inner_set(span, "Lessons");
+  await m_js_for_each(lessons, lesson => {
+    
+  })
 }
 await cc_main(document.body);
