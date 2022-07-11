@@ -53,7 +53,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
         if (m_js_equals(answer, answer_right)) {
           await on_next();
         } else {
-          answer_button.style.color = 'red';
+          await ui_element_style_background_color_border(answer_button, "255,0,20", 0.5, 0.2);
         }
       });
       await ui_element_style_monospace(answer_button);
