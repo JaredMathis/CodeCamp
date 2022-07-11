@@ -1,3 +1,4 @@
+import {m_js_property_get} from "./../../node_modules/mykro/src/m/js/property/get.mjs";
 import {ui_html_element_is} from "./../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {json_to} from "./../../node_modules/mykro/src/json/to.mjs";
 import {m_js_for_each} from "./../../node_modules/mykro/src/m/js/for/each.mjs";
@@ -9,7 +10,7 @@ export async function cc_main(parent) {
   let lessons = await cc_lessons_get();
   let span = await ui_element_text(parent, "span", "Lessons");
   await m_js_for_each(lessons, async lesson => {
-    await ui_element_text(parent, "span", await js_property_get(lesson, "name"));
+    await ui_element_text(parent, "span", await m_js_property_get(lesson, "name"));
   });
 }
 await cc_main(document.body);
