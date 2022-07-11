@@ -1,3 +1,4 @@
+import {ui_element_button_primary} from "./../../../../node_modules/mykro/src/ui/element/button/primary.mjs";
 import {m_js_boolean_is} from "./../../../../node_modules/mykro/src/m/js/boolean/is.mjs";
 import {ui_element_on} from "./../../../../node_modules/mykro/src/ui/element/on.mjs";
 import {m_js_function_is} from "./../../../../node_modules/mykro/src/m/js/function/is.mjs";
@@ -29,7 +30,7 @@ export async function cc_ui_lesson_example(parent, example, example_number, on_n
   await ui_element_style_monospace(output);
   await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
   await ui_element_style_background_color_border(output, "0,255,0", 0.5, 0.2);
-  let next = await ui_element_button_primary(container, "Another Example", on_next)
+  let next = await ui_element_button_primary(container, "Another Example", on_next);
   return {
     container
   };
