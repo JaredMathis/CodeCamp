@@ -12,18 +12,21 @@ import {ui_element_style_button_primary} from "./../../../../node_modules/mykro/
 export async function cc_ui_lesson_example(parent, example, example_number) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_number_is)(arguments);
   let container = await ui_element(parent, "div");
+  container.style.margin = 0;
   await ui_element_text(container, "h1", "Example " + example_number);
+  await ui_element_text(container, "div", "Input");
   let input = await ui_element(container, "div");
   await ui_element_style_monospace(input);
   await ui_element_html_inner_set(input, await m_js_property_get(example, "input"));
   await ui_element_style_background_color_border(input, "0,0,0", 1, 1);
   input.style.overflowWrap = "break-word";
   input.style.color = "white";
+  await ui_element_text(container, "div", "Output");
   let output = await ui_element(container, "div");
   await ui_element_style_monospace(output);
   await ui_element_html_inner_set(output, await m_js_property_get(example, "output"));
   await ui_element_style_background_color_border(output, "0,255,0", 0.5, 0.2);
-  let next = await ui_element(container, 'button');
+  let next = await ui_element_text(container, 'button', 'Next Example');
   await ui_element_style_button_primary(next);
   return {
     container
