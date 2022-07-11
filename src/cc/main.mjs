@@ -1,3 +1,4 @@
+import {ui_color_blue} from "./../../node_modules/mykro/src/ui/color/blue.mjs";
 import {ui_element_style_background_color} from "./../../node_modules/mykro/src/ui/element/style/background/color.mjs";
 import {ui_element_style_border} from "./../../node_modules/mykro/src/ui/element/style/border.mjs";
 import {ui_element} from "./../../node_modules/mykro/src/ui/element.mjs";
@@ -17,7 +18,7 @@ export async function cc_main(parent) {
     let li = await ui_element_text(list, "li", await m_js_property_get(lesson, "name"));
     li.style.listStyleType = "none";
     await ui_element_style_border(li, `rgba(${await ui_color_blue()}, 1)`);
-    await ui_element_style_background_color(li, await ui_color_blue(), .3);
+    await ui_element_style_background_color(li, await ui_color_blue(), 0.3);
   });
 }
 await cc_main(document.body);
