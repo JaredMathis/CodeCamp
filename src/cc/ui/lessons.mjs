@@ -1,3 +1,4 @@
+import {m_js_defined_is} from "./../../../node_modules/mykro/src/m/js/defined/is.mjs";
 import {ui_element_style_background_color} from "./../../../node_modules/mykro/src/ui/element/style/background/color.mjs";
 import {ui_color_blue} from "./../../../node_modules/mykro/src/ui/color/blue.mjs";
 import {ui_element_style_border} from "./../../../node_modules/mykro/src/ui/element/style/border.mjs";
@@ -8,9 +9,9 @@ import {ui_element_text} from "./../../../node_modules/mykro/src/ui/element/text
 import {cc_lessons_get} from "./../lessons/get.mjs";
 import {ui_html_element_is} from "./../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
-export async function cc_ui_lessons(parent) {
-  await m_js_arguments_assert(ui_html_element_is)(arguments);
-  let container = await ui_element(parent, 'div');
+export async function cc_ui_lessons(parent, view) {
+  await m_js_arguments_assert(ui_html_element_is, m_js_defined_is)(arguments);
+  let container = await ui_element(parent, "div");
   let lessons = await cc_lessons_get();
   let span = await ui_element_text(container, "h1", "Lessons");
   let list = await ui_element(container, "ul");
@@ -23,5 +24,5 @@ export async function cc_ui_lessons(parent) {
   });
   return {
     container
-  }
+  };
 }
