@@ -17,7 +17,7 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   let example_index = 0;
   view.view_set(async (parent) => {
     return await cc_ui_lesson_example(parent, lesson.examples[example_index], example_index + 1, function example_next() {
-      
+      alert('here')
     });
   });
   let back = await ui_element_text(container, "button", "Back to Lessons");
