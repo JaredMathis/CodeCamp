@@ -11,13 +11,16 @@ export async function cc_lesson_console_log() {
     name: "console.log(...);",
     example_get: async () => {
       let max_words = 3;
-      let size = await list_size(tokens);
-      let max_index = size - 1;
+      let tokens_size = await list_size(tokens);
+      let max_index = tokens_size - 1;
       let max_selectable_index = max_index - (max_words - 1);
-      await random_number();
+      let start_index = await random_number(0, max_selectable_index);
+      let size = await random_number(1, max_words);
+      let starting_at = await list_starting_at(tokens, start_index);
+      let joined = await list_joined(starting_at, ' ')
       return {
-        input: ``,
-        output: ``
+        input: `console.log('${joined}');`,
+        output: joined
       };
     },
     examples: await list_map(["Hello", "ABC", "Jesus is Lord"], item => {
