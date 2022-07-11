@@ -33,7 +33,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   const input_text = await m_js_property_get(example, "input");
   let input_lines = await m_js_string_split(input_text, "\n");
   let input = await ui_element_text(container, "div", input_text);
-  await for_each(input_lines, async line => {
+  await m_js_for_each(input_lines, async line => {
     await ui_element_text(input, "div", line);
   });
   await ui_element_style_monospace(input);
