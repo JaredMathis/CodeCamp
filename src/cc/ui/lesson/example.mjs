@@ -21,14 +21,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   let container = await ui_element(parent, "div");
   container.style.margin = 0;
   let example = await example_get();
-  example.output = eval(`
-  console.log = function (value) {
-    console.log.outputs.push(value);
-  }
-  console.log.outputs = [];
-  ${input}
-  console.log.outputs.join('\n');
-  `)
+  cc_example_output_generate(example);
   container.style.margin = 0;
   let prefix = "Example";
   if (is_quiz) {
@@ -51,6 +44,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
         return true;
       }
       let wrong = await example_get();
+      cc_example_output_generate(wrong);
       let wrong_answer = await m_js_property_get(wrong, "output");
       if (m_js_equals(wrong_answer, answer_right)) {
         return false;
@@ -81,3 +75,16 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     container
   };
 }
+function cc_example_output_generate(example) {
+  const code = `
+  console.log = function (value) {
+    console.log.outputs.push(value);
+  }
+  console.log.outputs = [];
+  ${example.input}
+  console.log.outputs.join('\\n');
+  `;
+  console.log(code);
+  example.output = eval(code);
+}
+
