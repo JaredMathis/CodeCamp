@@ -53,7 +53,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   if (is_quiz) {
     let wrong_answers = [];
     let wrong_answers_count = 3;
-    await m_js_for_each(await list_range(100), async () => {
+    await m_js_while_max(100, async () => {
       if (m_js_equals(await list_size(wrong_answers), wrong_answers_count)) {
         return true;
       }
