@@ -4,6 +4,6 @@ import {m_js_arguments_assert} from "./../../node_modules/mykro/src/m/js/argumen
 export async function cc_main(parent) {
   await m_js_arguments_assert(ui_html_element_is)(arguments);
   let view = await ui_view(parent);
-  view.set(() => await cc_ui_lessons(parent, view));
+  view.set(async () => await cc_ui_lessons(parent, view));
 }
 await cc_main(document.body);
