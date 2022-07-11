@@ -1,3 +1,4 @@
+import {ui_element_style_border} from "./../../node_modules/mykro/src/ui/element/style/border.mjs";
 import {ui_element} from "./../../node_modules/mykro/src/ui/element.mjs";
 import {m_js_property_get} from "./../../node_modules/mykro/src/m/js/property/get.mjs";
 import {ui_html_element_is} from "./../../node_modules/mykro/src/ui/html/element/is.mjs";
@@ -13,7 +14,8 @@ export async function cc_main(parent) {
   let list = await ui_element(parent, "ul");
   await m_js_for_each(lessons, async lesson => {
     let li = await ui_element_text(list, "li", await m_js_property_get(lesson, "name"));
-    li.style.listStyleType = 'none';
+    li.style.listStyleType = "none";
+    await ui_element_style_border(li);
   });
 }
 await cc_main(document.body);
