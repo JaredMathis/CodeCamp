@@ -116,6 +116,10 @@ function cc_example_output_generate(example) {
   `;
   console.log(code);
   let evaled;
-  evaled = eval(code);
+  try {
+    evaled = eval(code);
+  } catch (e) {
+    console.log(e);
+  }
   example.output = evaled;
 }

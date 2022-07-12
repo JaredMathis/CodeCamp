@@ -5,7 +5,7 @@ export async function cc_lesson_console_log_number() {
   return {
     name: "console.log(x);",
     example_get: async () => {
-      let x = random_number(1, 10);
+      let x = await random_number(1, 10);
       return {
         input: `console.log(${x});`
       };
