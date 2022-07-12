@@ -10,16 +10,8 @@ export async function cc_lesson_let_value() {
     name: "let value; value = ...;",
     example_get: async () => {
       let joined = await random_list_slice_join(tokens, 3, " ");
-      let other;
-      await m_js_while_max(100, async () => {
-        other = await random_list_slice_join(tokens, 3, " ");
-        if (!m_js_equals(joined, other)) {
-          return true;
-        }
-      });
       return {
         input: `let value;
-value = '${other}';
 value = '${joined}';
 console.log(value);`
       };
