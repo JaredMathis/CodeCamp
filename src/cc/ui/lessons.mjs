@@ -18,6 +18,8 @@ export async function cc_ui_lessons(parent, view) {
     let li = await ui_element_button_primary(list, await m_js_property_get(lesson, "name"), async () => {
       await view.view_set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {
         await view.view_set(async () => await cc_ui_lessons(parent, view));
+      }, function next_lesson() {
+        alert('here')
       }));
     });
   });
