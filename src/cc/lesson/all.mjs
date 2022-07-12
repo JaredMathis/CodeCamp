@@ -12,6 +12,7 @@ import {list_add} from "./../../../node_modules/mykro/src/list/add.mjs";
 import {cc_lesson_let_value_twice_b} from "./let/value/twice/b.mjs";
 import {cc_lesson_console_log_less_than_equals} from "./console/log/less/than/equals.mjs";
 import { cc_lesson_if } from "./if.mjs";
+import { cc_lesson_if_true_false } from "./if/true/false.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let result = [];
@@ -26,6 +27,7 @@ export async function cc_lesson_all() {
   await list_add(result, await cc_lesson_let_value_twice_c());
   await list_add(result, await cc_lesson_console_log_less_than_equals());
   await list_add(result, await cc_lesson_console_log_less_than());
+  await list_add(result, await cc_lesson_if_true_false());
   await list_add(result, await cc_lesson_if());
   return result;
 }
