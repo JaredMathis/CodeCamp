@@ -56,9 +56,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
       if (await m_js_number_at_least(await list_size(wrong_answers), wrong_answers_count)) {
         return true;
       }
-      let wrong = await example_get();
-      cc_example_output_generate(wrong);
-      let wrong_answer = await m_js_property_get(wrong, "output");
+      let wrong_answer = await answer_get();
       if (m_js_equals(wrong_answer, answer_right)) {
         return false;
       }
@@ -90,6 +88,13 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   return {
     container
   };
+
+  async function answer_get() {
+    let wrong = await example_get();
+    cc_example_output_generate(wrong);
+    let wrong_answer = await m_js_property_get(wrong, "output");
+    return wrong_answer;
+  }
 }
 async function ui_element_lines_monospace(container, lines, for_each_line) {
   await m_js_for_each(lines, async (line_text, index) => {
