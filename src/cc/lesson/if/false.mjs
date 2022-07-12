@@ -10,7 +10,7 @@ export async function cc_lesson_if_false() {
         input: `if (false) {
           console.log(${x});
         }`,
-        answers_wrong: [""]
+        answers_wrong: [`${x}`]
       };
     }
   };
