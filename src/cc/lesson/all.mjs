@@ -25,6 +25,7 @@ import { cc_lesson_number_increment } from "./number/increment.mjs";
 import { cc_lesson_number_increment_twice } from "./number/increment/twice.mjs";
 import { cc_lesson_if_preloop } from "./if/preloop.mjs";
 import { cc_lesson_if_preloop_b } from "./if/preloop/b.mjs";
+import { cc_lesson_if_preloop_c } from "./if/preloop/c.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let result = [];
