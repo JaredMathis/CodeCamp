@@ -11,7 +11,6 @@ import {cc_lesson_let_value_twice_b} from "./let/value/twice/b.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let result = [];
-  cc_lesson_let_value_b;
   await list_add(result, await cc_lesson_console_log_number());
   await list_add(result, await cc_lesson_number_add());
   await list_add(result, await cc_lesson_console_log_string());
