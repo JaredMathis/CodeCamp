@@ -4,7 +4,7 @@ import {m_js_arguments_assert} from "./../../../../../../../node_modules/mykro/s
 export async function cc_lesson_console_log_less_than_equals() {
   await m_js_arguments_assert()(arguments);
   return {
-    name: "console.log(x);",
+    name: "console.log(x <= y);",
     example_get: async () => {
       let x = await cc_random_number_1_10();
       let y = await random_number(x - 1, x + 1);

@@ -9,6 +9,7 @@ import {m_js_arguments_assert} from "./../../../node_modules/mykro/src/m/js/argu
 import {cc_lesson_let_value} from "./let/value.mjs";
 import {list_add} from "./../../../node_modules/mykro/src/list/add.mjs";
 import {cc_lesson_let_value_twice_b} from "./let/value/twice/b.mjs";
+import { cc_lesson_console_log_less_than_equals } from "./console/log/less/than/equals.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let result = [];
@@ -21,5 +22,6 @@ export async function cc_lesson_all() {
   await list_add(result, await cc_lesson_let_value_b());
   await list_add(result, await cc_lesson_let_value_twice());
   await list_add(result, await cc_lesson_let_value_twice_c());
+  await list_add(result, await cc_lesson_console_log_less_than_equals());
   return result;
 }
