@@ -67,7 +67,6 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     let output = await ui_element_text(container, "div", "");
     let green = "0,255,0";
     await ui_element_lines_monospace(output, await m_js_string_split(answer_right, "\n"), noop, "(No output)");
-    await ui_element_style_monospace(output);
     await ui_element_style_background_color_border(output, green, 0.5, 0.2);
     await ui_element_button_primary(container, next_text, on_next);
     await ui_element_button_primary(container, "Enough examples! Quiz me!", on_quiz_me);
@@ -83,6 +82,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   }
 }
 async function ui_element_lines_monospace(container, lines, for_each_line, no_lines_message) {
+  console.log(ui_element_lines_monospace.name)
   if (m_js_equals(await list_size(lines), 0)) {
     await ui_element_html_inner_set(container, no_lines_message);
     container.style.fontStyle = "italic";
@@ -102,12 +102,15 @@ async function ui_element_lines_monospace(container, lines, for_each_line, no_li
 }
 function cc_example_output_generate(example) {
   const code = `
-  console.log = function (value) {
-    console.log.outputs.push(value);
+  let console_log_old = console.log;
+  console.log = console_log_new;
+  function console_log_new(value) {
+    console_log_new.outputs.push(value);
   }
-  console.log.outputs = [];
+  console_log_new.outputs = [];
   ${example.input}
-  console.log.outputs.join('\\n');
+  console.log = console_log_old;
+  console_log_new.outputs.join('\\n');
   `;
   console.log(code);
   let evaled;
