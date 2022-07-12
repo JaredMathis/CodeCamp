@@ -16,8 +16,8 @@ export async function cc_lesson_all() {
   await list_add(result, await cc_lesson_console_log_string());
   await list_add(result, await cc_lesson_console_log_twice());
   await list_add(result, await cc_lesson_let_value());
-  await list_add(result, await cc_lesson_let_value_b());
   await list_add(result, await cc_lesson_let_value_twice_b());
+  await list_add(result, await cc_lesson_let_value_b());
   await list_add(result, await cc_lesson_let_value_twice());
   return result;
 }
