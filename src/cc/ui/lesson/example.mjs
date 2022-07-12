@@ -39,7 +39,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   const input_text = await m_js_property_get(example, "input");
   let input_lines = await m_js_string_split(input_text, "\n");
   let input = await ui_element_text(container, "div", "");
-  await ui_element_lines_monospace(input, input_lines, `rgba(255,255,255,0.5)`);
+  await ui_element_lines_monospace(input, input_lines);
   await ui_element_style_background_color_border(input, "0,0,0", 1, 1);
   input.style.overflowWrap = "break-word";
   input.style.color = "white";
@@ -74,13 +74,13 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
           await ui_element_style_background_color_border(answer_button, red, 0.5, 0.2);
         }
       });
-      await ui_element_lines_monospace(answer_button, await m_js_string_split(answer, "\n"), `rgba(${await ui_color_blue()},0.5)`);
+      await ui_element_lines_monospace(answer_button, await m_js_string_split(answer, "\n"));
     });
   } else {
     let next_text = `Another Example`;
     let output = await ui_element_text(container, "div", '');
     let green = "0,255,0";
-    await ui_element_lines_monospace(output, await m_js_string_split(answer_right, "\n"), `rgba(${green},0.5)`);
+    await ui_element_lines_monospace(output, await m_js_string_split(answer_right, "\n"));
     await ui_element_style_monospace(output);
     await ui_element_style_background_color_border(output, green, 0.5, 0.2);
     await ui_element_button_primary(container, next_text, on_next);
@@ -90,7 +90,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     container
   };
 }
-async function ui_element_lines_monospace(container, lines, color) {
+async function ui_element_lines_monospace(container, lines) {
   await m_js_for_each(lines, async (line_text, index) => {
     let line = await ui_element_text(container, "div", line_text);
     await ui_element_style_monospace(line);
