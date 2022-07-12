@@ -1,3 +1,4 @@
+import {cc_random_number_1_10} from "./../../../random/number/1/10.mjs";
 import {m_js_arguments_assert} from "./../../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 export async function cc_lesson_if_preloop_b() {
   await m_js_arguments_assert()(arguments);
@@ -16,7 +17,7 @@ export async function cc_lesson_if_preloop_b() {
           console.log(x);
           x++;
         }`,
-        answers_wrong: [`${y}\n${y+1}`]
+        answers_wrong: [`${y}\n${y + 1}`]
       };
     }
   };
