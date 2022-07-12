@@ -18,6 +18,7 @@ export async function cc_lesson_let_value_twice_b() {
       return {
         input: `let value;
 value = '${other}';
+console.log(value);
 value = '${joined}';
 console.log(value);`,
         answers_wrong: [other], 
