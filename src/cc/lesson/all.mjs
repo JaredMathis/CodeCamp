@@ -1,3 +1,4 @@
+import {cc_lesson_let_value_twice_c} from "./let/value/twice/c.mjs";
 import {cc_lesson_let_value_b} from "./let/value/b.mjs";
 import {cc_lesson_number_add} from "./number/add.mjs";
 import {cc_lesson_console_log_number} from "./console/log/number.mjs";
@@ -19,5 +20,6 @@ export async function cc_lesson_all() {
   await list_add(result, await cc_lesson_let_value_twice_b());
   await list_add(result, await cc_lesson_let_value_b());
   await list_add(result, await cc_lesson_let_value_twice());
+  await list_add(result, await cc_lesson_let_value_twice_c());
   return result;
 }
