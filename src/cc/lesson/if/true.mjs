@@ -5,7 +5,7 @@ export async function cc_lesson_if_true() {
   return {
     name: "if (true)",
     example_get: async () => {
-      let {x} = await cc_random_number_1_10();
+      let x = await cc_random_number_1_10();
       return {
         input: `if (true) {
           console.log(${x});
