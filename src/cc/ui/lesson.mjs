@@ -17,8 +17,8 @@ export async function cc_ui_lesson(parent, lesson, go_back, next_lesson) {
   let index = 0;
   let is_quiz = false;
   render_lesson();
-  let next = await ui_element_button_secondary(container, "button", "Next Lesson", next_lesson);
-  let back = await ui_element_button_secondary(container, "button", "Back to Lessons", go_back);
+  let next = await ui_element_button_secondary(container, "Next Lesson", next_lesson);
+  let back = await ui_element_button_secondary(container, "Back to Lessons", go_back);
   return {
     container
   };
