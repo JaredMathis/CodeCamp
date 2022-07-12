@@ -22,7 +22,7 @@ export async function cc_ui_lessons(parent, view) {
         alert("here");
       }));
     };
-    let li = await ui_element_button_primary(list, await m_js_property_get(lesson, "name"), lesson.select);
+    await ui_element_button_primary(list, await m_js_property_get(lesson, "name"), lesson.select);
   });
   return {
     container
