@@ -14,12 +14,13 @@ export async function cc_ui_lessons(parent, view) {
   let lessons = await cc_lesson_all();
   let span = await ui_element_text(container, "h1", "Lessons");
   let list = await ui_element(container, "div");
-  await m_js_for_each(lessons, async lesson => {
+  await m_js_for_each(lessons, async (lesson, index) => {
     lesson.select = async () => {
       await view.view_set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {
         await view.view_set(async () => await cc_ui_lessons(parent, view));
-      }, function next_lesson() {
-        alert("here");
+      }, async function next_lesson() {
+        let next = lessons[index + 1]
+        await next.select();
       }));
     };
     await ui_element_button_primary(list, await m_js_property_get(lesson, "name"), lesson.select);
