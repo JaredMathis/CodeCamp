@@ -7,9 +7,9 @@ import {list_add} from "./../../../node_modules/mykro/src/list/add.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let result = [];
-  await list_add(result, cc_lesson_console_log());
-  await list_add(result, cc_lesson_console_log_twice());
-  await list_add(result, cc_lesson_let_value());
-  await list_add(result, cc_lesson_let_value_twice());
+  await list_add(result, await cc_lesson_console_log());
+  await list_add(result, await cc_lesson_console_log_twice());
+  await list_add(result, await cc_lesson_let_value());
+  await list_add(result, await cc_lesson_let_value_twice());
   return result;
 }
