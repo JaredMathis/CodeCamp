@@ -1,13 +1,6 @@
-import {list_contains} from "./../../../../node_modules/mykro/src/list/contains.mjs";
 import {noop} from "./../../../../node_modules/mykro/src/noop.mjs";
-import {m_js_number_at_least} from "./../../../../node_modules/mykro/src/m/js/number/at/least.mjs";
-import {m_js_while_max} from "./../../../../node_modules/mykro/src/m/js/while/max.mjs";
 import {random_list_shuffle} from "./../../../../node_modules/mykro/src/random/list/shuffle.mjs";
-import {list_join} from "./../../../../node_modules/mykro/src/list/join.mjs";
-import {list_add} from "./../../../../node_modules/mykro/src/list/add.mjs";
-import {list_size} from "./../../../../node_modules/mykro/src/list/size.mjs";
 import {m_js_equals} from "./../../../../node_modules/mykro/src/m/js/equals.mjs";
-import {list_range} from "./../../../../node_modules/mykro/src/list/range.mjs";
 import {m_js_boolean_is} from "./../../../../node_modules/mykro/src/m/js/boolean/is.mjs";
 import {ui_element_button_primary} from "./../../../../node_modules/mykro/src/ui/element/button/primary.mjs";
 import {m_js_function_is} from "./../../../../node_modules/mykro/src/m/js/function/is.mjs";
@@ -25,6 +18,7 @@ import {list_max_index} from "./../../../../node_modules/mykro/src/list/max/inde
 import {m_js_property_has} from "./../../../../node_modules/mykro/src/m/js/property/has.mjs";
 import {list_add_all} from "./../../../../node_modules/mykro/src/list/add/all.mjs";
 import {ui_color_blue} from "./../../../../node_modules/mykro/src/ui/color/blue.mjs";
+import { cc_values_different_generate } from "../../values/different/generate.mjs";
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
   let container = await ui_element(parent, "div");
@@ -85,18 +79,6 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     let wrong_answer = await m_js_property_get(wrong, "output");
     return wrong_answer;
   }
-}
-async function cc_values_different_generate(answers, answers_count, answer_get) {
-  await m_js_while_max(100, async () => {
-    if (await m_js_number_at_least(await list_size(answers), answers_count)) {
-      return true;
-    }
-    let wrong_answer = await answer_get();
-    if (await list_contains(answers, wrong_answer)) {
-      return false;
-    }
-    await list_add(answers, wrong_answer);
-  });
 }
 
 async function ui_element_lines_monospace(container, lines, for_each_line) {
