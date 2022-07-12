@@ -4,7 +4,7 @@ import {cc_random_number_1_10} from "./../../../../random/number/1/10.mjs";
 export async function cc_lesson_let_value_twice_c() {
   await m_js_arguments_assert()(arguments);
   return {
-    name: "let value = x; value = y;",
+    name: "let value = ...; value = ...;",
     example_get: async () => {
       let {x, y} = await cc_value_different_generate(cc_random_number_1_10);
       return {
