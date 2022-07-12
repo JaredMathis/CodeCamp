@@ -21,7 +21,7 @@ value = '${other}';
 console.log(value);
 value = '${joined}';
 console.log(value);`,
-        answers_wrong: [other]
+        answers_wrong: [joined + "\n" + other]
       };
     }
   };

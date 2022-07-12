@@ -78,9 +78,11 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     });
   } else {
     let next_text = `Another Example`;
-    let output = await ui_element_text(container, "div", answer_right);
+    let output = await ui_element_text(container, "div", '');
+    let green = "0,255,0";
+    await ui_element_lines_monospace(output, await m_js_string_split(answer_right, "\n"), `rgba(${green},0.5)`);
     await ui_element_style_monospace(output);
-    await ui_element_style_background_color_border(output, "0,255,0", 0.5, 0.2);
+    await ui_element_style_background_color_border(output, green, 0.5, 0.2);
     await ui_element_button_primary(container, next_text, on_next);
     await ui_element_button_primary(container, "Enough examples! Quiz me!", on_quiz_me);
   }
@@ -93,7 +95,7 @@ async function ui_element_lines_monospace(container, lines, color) {
     let line = await ui_element_text(container, "div", line_text);
     await ui_element_style_monospace(line);
     if (index !== 0) {
-      line.style.borderTop = `0.1vh solid ${color}`;
+      line.style.borderTop = `0.15vh solid rgba(200,200,200,0.5)`;
       line.style.paddingTop = "1vh";
     }
     if (index !== await list_max_index(lines)) {
