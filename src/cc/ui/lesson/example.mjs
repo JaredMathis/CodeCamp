@@ -1,3 +1,4 @@
+import {m_js_number_at_least} from "./../../../../node_modules/mykro/src/m/js/number/at/least.mjs";
 import {m_js_while_max} from "./../../../../node_modules/mykro/src/m/js/while/max.mjs";
 import {random_list_shuffle} from "./../../../../node_modules/mykro/src/random/list/shuffle.mjs";
 import {list_join} from "./../../../../node_modules/mykro/src/list/join.mjs";
@@ -19,6 +20,8 @@ import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/a
 import {m_js_for_each} from "./../../../../node_modules/mykro/src/m/js/for/each.mjs";
 import {m_js_string_split} from "./../../../../node_modules/mykro/src/m/js/string/split.mjs";
 import {list_max_index} from "./../../../../node_modules/mykro/src/list/max/index.mjs";
+import {m_js_property_has} from "./../../../../node_modules/mykro/src/m/js/property/has.mjs";
+import {list_add_all} from "./../../../../node_modules/mykro/src/list/add/all.mjs";
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
   let container = await ui_element(parent, "div");
@@ -53,9 +56,12 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   let answer_right = await m_js_property_get(example, "output");
   if (is_quiz) {
     let wrong_answers = [];
+    if (m_js_property_has(example, "answers_wrong")) {
+      await list_add_all(wrong_answers, example.answers_wrong);
+    }
     let wrong_answers_count = 3;
     await m_js_while_max(100, async () => {
-      if (m_js_equals(await list_size(wrong_answers), wrong_answers_count)) {
+      if (m_js_number_at_least(await list_size(wrong_answers), wrong_answers_count)) {
         return true;
       }
       let wrong = await example_get();

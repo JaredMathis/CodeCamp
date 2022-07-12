@@ -19,7 +19,8 @@ export async function cc_lesson_let_value_twice() {
         input: `let value;
 value = '${other}';
 value = '${joined}';
-console.log(value);`
+console.log(value);`,
+        answers_wrong: [other], 
       };
     }
   };
