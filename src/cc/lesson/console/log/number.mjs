@@ -5,9 +5,9 @@ export async function cc_lesson_console_log_number() {
   return {
     name: "console.log(x);",
     example_get: async () => {
-      let joined = random_number();
+      let x = random_number(1, 10);
       return {
-        input: `console.log(${joined});`
+        input: `console.log(${x});`
       };
     }
   };
