@@ -22,6 +22,7 @@ import {m_js_string_split} from "./../../../../node_modules/mykro/src/m/js/strin
 import {list_max_index} from "./../../../../node_modules/mykro/src/list/max/index.mjs";
 import {m_js_property_has} from "./../../../../node_modules/mykro/src/m/js/property/has.mjs";
 import {list_add_all} from "./../../../../node_modules/mykro/src/list/add/all.mjs";
+import {ui_color_blue} from "./../../../../node_modules/mykro/src/ui/color/blue.mjs";
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
   let container = await ui_element(parent, "div");
@@ -65,14 +66,15 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     let answers = await list_join([[answer_right], wrong_answers]);
     await random_list_shuffle(answers);
     await m_js_for_each(answers, async answer => {
-      let answer_button = await ui_element_button_primary(container, answer, async () => {
+      let red = "255,0,20";
+      let answer_button = await ui_element_button_primary(container, "", async () => {
         if (m_js_equals(answer, answer_right)) {
           await on_next();
         } else {
-          await ui_element_style_background_color_border(answer_button, "255,0,20", 0.5, 0.2);
+          await ui_element_style_background_color_border(answer_button, red, 0.5, 0.2);
         }
       });
-      await ui_element_style_monospace(answer_button);
+      await ui_element_lines_monospace(answer_button, await m_js_string_split(answer, "\n"), `rgba(${await ui_color_blue()},0.5)`);
     });
   } else {
     let next_text = `Another Example`;
@@ -99,7 +101,6 @@ async function ui_element_lines_monospace(container, lines, color) {
     }
   });
 }
-
 function cc_example_output_generate(example) {
   const code = `
   console.log = function (value) {
