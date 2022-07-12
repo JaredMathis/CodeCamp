@@ -9,7 +9,7 @@ export async function cc_value_different_generate(value_get) {
   let y;
   await m_js_while_max(100, async () => {
     scrollY = await cc_random_number_1_10();
-    if (!m_js_equals(x, other)) {
+    if (!m_js_equals(x, y)) {
       return true;
     }
   });
