@@ -3,7 +3,7 @@ import {m_js_arguments_assert} from "./../../../../../node_modules/mykro/src/m/j
 export async function cc_lesson_console_log_twice() {
   await m_js_arguments_assert()(arguments);
   return {
-    name: "console.log('...'); // x2",
+    name: "console.log(x); // x2",
     example_get: async () => {
       let x = await cc_random_number_1_10();
       let y = await cc_random_number_1_10();
