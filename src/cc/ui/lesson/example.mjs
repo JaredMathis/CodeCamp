@@ -61,7 +61,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     }
     let wrong_answers_count = 3;
     await m_js_while_max(100, async () => {
-      if (m_js_number_at_least(await list_size(wrong_answers), wrong_answers_count)) {
+      if (await m_js_number_at_least(await list_size(wrong_answers), wrong_answers_count)) {
         return true;
       }
       let wrong = await example_get();
