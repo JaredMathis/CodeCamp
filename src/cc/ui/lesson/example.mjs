@@ -56,7 +56,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   let answer_right = await m_js_property_get(example, "output");
   if (is_quiz) {
     let wrong_answers = [];
-    if (m_js_property_has(example, "answers_wrong")) {
+    if (await m_js_property_has(example, "answers_wrong")) {
       await list_add_all(wrong_answers, example.answers_wrong);
     }
     let wrong_answers_count = 3;
