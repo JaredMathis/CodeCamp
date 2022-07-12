@@ -8,7 +8,7 @@ export async function cc_lesson_number_add() {
       let x = await cc_random_number_1_10();
       let y = await cc_random_number_1_10();
       return {
-        input: `console.log(x + y);`
+        input: `console.log(${x} + ${y});`
       };
     }
   };
