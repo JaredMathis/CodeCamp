@@ -40,7 +40,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   const input_text = await m_js_property_get(example, "input");
   let input_lines = await m_js_string_split(input_text, "\n");
   let input = await ui_element_text(container, "div", "");
-  await ui_element_lines_monospace(input, input_lines, noop);
+  await ui_element_lines_monospace(input, input_lines, line => line.style.color = 'white');
   await ui_element_style_background_color_border(input, "0,0,0", 1, 1);
   input.style.overflowWrap = "break-word";
   input.style.color = "white";
