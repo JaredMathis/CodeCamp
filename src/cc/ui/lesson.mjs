@@ -1,3 +1,4 @@
+import {ui_element_button_secondary} from "./../../../node_modules/mykro/src/ui/element/button/secondary.mjs";
 import {list_size} from "./../../../node_modules/mykro/src/list/size.mjs";
 import {m_js_equals} from "./../../../node_modules/mykro/src/m/js/equals.mjs";
 import {ui_element_on} from "./../../../node_modules/mykro/src/ui/element/on.mjs";
@@ -21,9 +22,7 @@ export async function cc_ui_lesson(parent, lesson, go_back) {
   let index = 0;
   let is_quiz = false;
   render_lesson();
-  let back = await ui_element_text(container, "button", "Back to Lessons");
-  await ui_element_style_button_secondary(back);
-  await ui_element_on(back, "click", go_back);
+  let back = await ui_element_button_secondary(container, "button", "Back to Lessons", go_back);
   return {
     container
   };
