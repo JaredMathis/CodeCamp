@@ -82,8 +82,10 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   }
 }
 async function ui_element_lines_monospace(container, lines, for_each_line, no_lines_message) {
-  console.log({lines})
-  if (m_js_equals(await list_size(lines), 1) && lines[0] === '') {
+  console.log({
+    lines
+  });
+  if (m_js_equals(await list_size(lines), 1) && lines[0] === "") {
     await ui_element_html_inner_set(container, no_lines_message);
     container.style.fontStyle = "italic";
   }

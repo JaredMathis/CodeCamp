@@ -11,10 +11,10 @@ import {cc_lesson_let_value} from "./let/value.mjs";
 import {list_add} from "./../../../node_modules/mykro/src/list/add.mjs";
 import {cc_lesson_let_value_twice_b} from "./let/value/twice/b.mjs";
 import {cc_lesson_console_log_less_than_equals} from "./console/log/less/than/equals.mjs";
-import { cc_lesson_if } from "./if.mjs";
-import { cc_lesson_if_true_false } from "./if/true/false.mjs";
-import { cc_lesson_if_true } from "./if/true.mjs";
-import { cc_lesson_if_false } from "./if/false.mjs";
+import {cc_lesson_if_let} from "./if/let.mjs";
+import {cc_lesson_if_true_false} from "./if/true/false.mjs";
+import {cc_lesson_if_true} from "./if/true.mjs";
+import {cc_lesson_if_false} from "./if/false.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let result = [];
@@ -32,6 +32,6 @@ export async function cc_lesson_all() {
   await list_add(result, await cc_lesson_if_true());
   await list_add(result, await cc_lesson_if_false());
   await list_add(result, await cc_lesson_if_true_false());
-  await list_add(result, await cc_lesson_if());
+  await list_add(result, await cc_lesson_if_let());
   return result;
 }
