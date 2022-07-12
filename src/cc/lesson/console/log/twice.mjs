@@ -9,7 +9,8 @@ export async function cc_lesson_console_log_twice() {
       let joined2 = await cc_tokens_3_get();
       return {
         input: `console.log('${joined}');
-console.log('${joined2}');`
+console.log('${joined2}');`,
+        answers_wrong: [joined2 + "\n" + joined, joined + " " + joined2]
       };
     }
   };
