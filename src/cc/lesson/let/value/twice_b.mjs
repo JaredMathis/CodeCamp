@@ -5,7 +5,7 @@ import {m_js_arguments_assert} from "mykro/src/m/js/arguments/assert.mjs";
 export async function cc_lesson_let_value_twice_b() {
   await m_js_arguments_assert()(arguments);
   return {
-    name: "let value; value = ...; // x2",
+    name: "let value; value = ...; console...; // x2",
     example_get: async () => {
       let joined = await cc_tokens_3_get();
       let other;
