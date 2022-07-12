@@ -115,5 +115,6 @@ function cc_example_output_generate(example) {
   console.log.outputs.join('\\n');
   `;
   console.log(code);
-  example.output = eval(code);
+  const evaled = eval(code);
+  example.output = evaled;
 }
