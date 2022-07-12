@@ -22,6 +22,7 @@ import {cc_lesson_while_basic} from "./while/basic.mjs";
 import {cc_lesson_number_add_let} from "./number/add/let.mjs";
 import { cc_lesson_let_twice } from "./let/twice.mjs";
 import { cc_lesson_number_increment } from "./number/increment.mjs";
+import { cc_lesson_number_increment_twice } from "./number/increment/twice.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let result = [];
@@ -39,6 +40,7 @@ export async function cc_lesson_all() {
   await list_add(result, await cc_lesson_number_add_one());
   await list_add(result, await cc_lesson_number_add_let_assign());
   await list_add(result, await cc_lesson_number_increment());
+  await list_add(result, await cc_lesson_number_increment_twice());
   await list_add(result, await cc_lesson_console_log_less_than_equals());
   await list_add(result, await cc_lesson_console_log_less_than());
   await list_add(result, await cc_lesson_if_true());
