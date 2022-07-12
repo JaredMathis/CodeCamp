@@ -6,15 +6,15 @@ export async function cc_lesson_if() {
   let x = await cc_random_number_1_10();
   let y = await random_number(x - 1, x + 1);
   return {
-    name: "if (x < y)",
+    name: "if (x <= y)",
     example_get: async () => {
       let x = await cc_random_number_1_10();
       let y = await random_number(x - 1, x + 1);
       return {
         input: `let x = ${x};
-if (x < ${y}) {
- console.log('Yes, less than');
-}`
+        if (x <= ${y}) {
+          console.log('Yes, less than');
+        }`
       };
     }
   };
