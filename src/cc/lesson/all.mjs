@@ -5,5 +5,11 @@ import {m_js_arguments_assert} from "./../../../node_modules/mykro/src/m/js/argu
 import {cc_lesson_let_value} from "./let/value.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
-  return [await cc_lesson_console_log(), await cc_lesson_console_log_twice(), await cc_lesson_let_value(), await cc_lesson_let_value_twice()];
+  function *get() {
+    yield await cc_lesson_console_log();
+    yield await cc_lesson_console_log_twice();
+    yield await cc_lesson_let_value();
+    yield await cc_lesson_let_value_twice();
+  }
+  return Array.from(get());
 }
