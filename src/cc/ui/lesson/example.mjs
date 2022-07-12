@@ -53,16 +53,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
       await list_add_all(answers, example.answers_wrong);
     }
     let answers_count = 4;
-    await m_js_while_max(100, async () => {
-      if (await m_js_number_at_least(await list_size(answers), answers_count)) {
-        return true;
-      }
-      let wrong_answer = await answer_get();
-      if (await list_contains(answers, wrong_answer)) {
-        return false;
-      }
-      await list_add(answers, wrong_answer);
-    });
+    await cc_values_different_generate(answers, answers_count, answer_get);
     await random_list_shuffle(answers);
     await m_js_for_each(answers, async answer => {
       let red = "255,0,20";
@@ -95,6 +86,19 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     return wrong_answer;
   }
 }
+async function cc_values_different_generate(answers, answers_count, answer_get) {
+  await m_js_while_max(100, async () => {
+    if (await m_js_number_at_least(await list_size(answers), answers_count)) {
+      return true;
+    }
+    let wrong_answer = await answer_get();
+    if (await list_contains(answers, wrong_answer)) {
+      return false;
+    }
+    await list_add(answers, wrong_answer);
+  });
+}
+
 async function ui_element_lines_monospace(container, lines, for_each_line) {
   await m_js_for_each(lines, async (line_text, index) => {
     let line = await ui_element_text(container, "div", line_text);
