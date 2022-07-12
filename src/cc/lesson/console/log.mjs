@@ -3,7 +3,7 @@ import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/a
 export async function cc_lesson_console_log() {
   await m_js_arguments_assert()(arguments);
   return {
-    name: "console.log(...);",
+    name: "console.log('...');",
     example_get: async () => {
       let joined = await cc_tokens_3_get();
       return {
