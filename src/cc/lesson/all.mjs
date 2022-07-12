@@ -52,6 +52,7 @@ export async function cc_lesson_all() {
   await list_add(result, await cc_lesson_if_let());
   await list_add(result, await cc_lesson_if_preloop());
   await list_add(result, await cc_lesson_if_preloop_b());
+  await list_add(result, await cc_lesson_if_preloop_c());
   await list_add(result, await cc_lesson_while_basic());
   return result;
 }
