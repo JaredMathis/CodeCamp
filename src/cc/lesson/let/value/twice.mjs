@@ -20,7 +20,7 @@ export async function cc_lesson_let_value_twice() {
 value = '${other}';
 value = '${joined}';
 console.log(value);`,
-        answers_wrong: [other], 
+        answers_wrong: [other]
       };
     }
   };
