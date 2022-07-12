@@ -31,9 +31,9 @@ export async function cc_lesson_all() {
   await list_add(result, await cc_lesson_let_value_assign());
   await list_add(result, await cc_lesson_let_value_twice_b());
   await list_add(result, await cc_lesson_let_value());
-  await list_add(result, await cc_lesson_let_twice());
   await list_add(result, await cc_lesson_let_value_twice());
   await list_add(result, await cc_lesson_let_value_twice_c());
+  await list_add(result, await cc_lesson_let_twice());
   await list_add(result, await cc_lesson_number_add_let());
   await list_add(result, await cc_lesson_number_add_one());
   await list_add(result, await cc_lesson_number_add_let_assign());
