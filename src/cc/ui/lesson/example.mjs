@@ -78,7 +78,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
       await ui_element_lines_monospace(answer_button, await m_js_string_split(answer, "\n"), noop);
     });
   } else {
-    let next_text = `Another Example`;
+    let next_text = `Another example, please!`;
     let output = await ui_element_text(container, "div", "");
     let green = "0,255,0";
     await ui_element_lines_monospace(output, await m_js_string_split(answer_right, "\n"), noop);
