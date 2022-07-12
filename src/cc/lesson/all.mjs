@@ -23,6 +23,7 @@ import {cc_lesson_number_add_let} from "./number/add/let.mjs";
 import { cc_lesson_let_twice } from "./let/twice.mjs";
 import { cc_lesson_number_increment } from "./number/increment.mjs";
 import { cc_lesson_number_increment_twice } from "./number/increment/twice.mjs";
+import { cc_lesson_if_preloop } from "./if/preloop.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let result = [];
@@ -48,6 +49,7 @@ export async function cc_lesson_all() {
   await list_add(result, await cc_lesson_if_true_false());
   await list_add(result, await cc_lesson_if_less_than_equals());
   await list_add(result, await cc_lesson_if_let());
+  await list_add(result, await cc_lesson_if_preloop());
   await list_add(result, await cc_lesson_while_basic());
   return result;
 }
