@@ -1,6 +1,6 @@
-import {cc_value_different_generate} from "./../../../value/different/generate.mjs";
-import {cc_random_number_1_10} from "./../../../random/number/1/10.mjs";
-import {m_js_arguments_assert} from "./../../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
+import {cc_value_different_generate} from "./../../../../value/different/generate.mjs";
+import {cc_random_number_1_10} from "./../../../../random/number/1/10.mjs";
+import {m_js_arguments_assert} from "./../../../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 export async function cc_lesson_let_value_twice_b() {
   await m_js_arguments_assert()(arguments);
   return {
