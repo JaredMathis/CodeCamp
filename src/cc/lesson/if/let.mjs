@@ -10,7 +10,7 @@ export async function cc_lesson_if_let() {
       let y = await random_number(x - 2, x + 1);
       return {
         input: `let x = ${x};
-        if (x <= ${y}) {
+        if (x < ${y}) {
           console.log('Yes, less than');
         }`
       };
