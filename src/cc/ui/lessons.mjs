@@ -1,3 +1,5 @@
+import {list_map} from "./../../../node_modules/mykro/src/list/map.mjs";
+import {list_join} from "./../../../node_modules/mykro/src/list/join.mjs";
 import {ui_element_button_primary} from "./../../../node_modules/mykro/src/ui/element/button/primary.mjs";
 import {cc_ui_lesson} from "./lesson.mjs";
 import {m_js_defined_is} from "./../../../node_modules/mykro/src/m/js/defined/is.mjs";
@@ -11,7 +13,8 @@ import {m_js_arguments_assert} from "./../../../node_modules/mykro/src/m/js/argu
 export async function cc_ui_lessons(parent, view) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is)(arguments);
   let container = await ui_element(parent, "div");
-  let lessons = await cc_lesson_all();
+  let modules = await cc_lesson_all();
+  let lessons = await list_join(await list_map(modules, module => module["lessons"]));
   let span = await ui_element_text(container, "h1", "Lessons");
   let list = await ui_element(container, "div");
   await m_js_for_each(lessons, async (lesson, index) => {

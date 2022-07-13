@@ -29,22 +29,21 @@ import { cc_lesson_if_preloop_c } from "./if/preloop/c.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
+  let module;
   let result = [];
-  
-  lessons = [];
-  
+  await module_new(`Output`);
   await list_add(lessons, await cc_lesson_console_log_number());
   await list_add(lessons, await cc_lesson_number_add());
   await list_add(lessons, await cc_lesson_console_log_string());
   await list_add(lessons, await cc_lesson_console_log_twice());
-
+  await module_new(`Variables`);
   await list_add(lessons, await cc_lesson_let_value_assign());
   await list_add(lessons, await cc_lesson_let_value_twice_b());
   await list_add(lessons, await cc_lesson_let_value());
   await list_add(lessons, await cc_lesson_let_value_twice());
   await list_add(lessons, await cc_lesson_let_value_twice_c());
   await list_add(lessons, await cc_lesson_let_twice());
-  
+  await module_new(`Assignment`);
   await list_add(lessons, await cc_lesson_number_add_let());
   await list_add(lessons, await cc_lesson_number_add_one());
   await list_add(lessons, await cc_lesson_number_add_let_assign());
@@ -52,16 +51,23 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_number_increment_twice());
   await list_add(lessons, await cc_lesson_console_log_less_than_equals());
   await list_add(lessons, await cc_lesson_console_log_less_than());
-  
+  await module_new(`Branching`);
   await list_add(lessons, await cc_lesson_if_true());
   await list_add(lessons, await cc_lesson_if_false());
   await list_add(lessons, await cc_lesson_if_true_false());
   await list_add(lessons, await cc_lesson_if_less_than_equals());
   await list_add(lessons, await cc_lesson_if_let());
-  
+  await module_new(`Looping`);
   await list_add(lessons, await cc_lesson_if_preloop());
   await list_add(lessons, await cc_lesson_if_preloop_b());
   await list_add(lessons, await cc_lesson_if_preloop_c());
   await list_add(lessons, await cc_lesson_while_basic());
-  return lessons;
+  return result;
+
+  async function module_new(module_name) {
+    module = {};
+    await list_add(result, module);
+    lessons = [];
+    module.lessons = lessons;
+  }
 }
