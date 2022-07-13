@@ -19,7 +19,7 @@ export async function cc_ui_lessons(parent, view) {
   let span = await ui_element_text(container, "h1", "Lessons");
   let list = await ui_element(container, "div");
   await m_js_for_each(modules, async module => {
-    await m_js_for_each(lessons, async lesson => {
+    await m_js_for_each(module.lessons, async lesson => {
       let index = await list_index_of(lessons, lesson);
       lesson.select = async () => {
         await view.view_set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {
