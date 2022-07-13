@@ -23,8 +23,8 @@ export async function cc_ui_lessons(parent, view) {
   let module_list = await ui_element(container, "div");
   await m_js_for_each(modules, async module => {
     let module_container = await ui_element(module_list, "div");
-    await ui_element_style_background_color_border(module_container, "1,1,1", 0.1, 0.12);
-    let module_title = await ui_element_text(module_container, "div", module.name);
+    await ui_element_style_background_color_border(module_container, "1,1,1", 0.1, 0.03);
+    let module_title = await ui_element_text(module_container, "h2", module.name);
     let lesson_list = await ui_element(module_container, "div");
     await m_js_for_each(module.lessons, async lesson => {
       let index = await list_index_of(lessons, lesson);
@@ -36,7 +36,7 @@ export async function cc_ui_lessons(parent, view) {
         }, async function next_lesson() {
           let next = lessons[index + 1];
           await next.select();
-        }));
+        }, module.name));
       };
       await ui_element_button_primary(lesson_list, await m_js_property_get(lesson, "name"), lesson.select);
     });
