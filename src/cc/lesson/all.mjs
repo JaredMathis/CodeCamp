@@ -66,7 +66,7 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_if_true_false());
   await list_add(lessons, await cc_lesson_if_less_than_equals());
   await list_add(lessons, await cc_lesson_if_let());
-  await module_new(`Looping`);
+  await module_new(`Looping While`);
   await list_add(lessons, await cc_lesson_if_preloop());
   await list_add(lessons, await cc_lesson_if_preloop_b());
   await list_add(lessons, await cc_lesson_if_preloop_c());
@@ -74,6 +74,7 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_while_basic_b());
   await list_add(lessons, await cc_lesson_while_basic_c());
   await list_add(lessons, await cc_lesson_while_basic_d());
+  await module_new(`Looping For`);
   await list_add(lessons, await cc_lesson_while_basic_e());
   await list_add(lessons, await cc_lesson_for_basic());
   await list_add(lessons, await cc_lesson_for_basic_b());
