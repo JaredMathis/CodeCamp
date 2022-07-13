@@ -34,16 +34,17 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     prefix = "Question";
   }
   await ui_element_text(container, "h1", prefix + " " + example_number);
-  let container_input = await ui_element_card(module_list);
-  await ui_element_text(container, "div", "Input");
+  let container_input = await ui_element_card(container);
+  await ui_element_text(container_input, "div", "Input");
   const input_text = await m_js_property_get(example, "input");
   let input_lines = await m_js_string_split(input_text, "\n");
-  let input = await ui_element_text(container, "div", "");
+  let input = await ui_element_text(container_input, "div", "");
   await ui_element_lines_monospace(input, input_lines, line => line.style.color = "white", "TODO");
   await ui_element_style_background_color_border(input, "0,0,0", 1, 1);
   input.style.overflowWrap = "break-word";
   input.style.color = "white";
-  await ui_element_text(container, "div", "Output");
+  let container_output = await ui_element_card(container);
+  await ui_element_text(container_output, "div", "Output");
   let answer_right = await m_js_property_get(example, "output");
   if (is_quiz) {
     let answers = [answer_right];
@@ -55,7 +56,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     await random_list_shuffle(answers);
     await m_js_for_each(answers, async answer => {
       let red = "255,0,20";
-      let answer_button = await ui_element_button_primary(container, "", async () => {
+      let answer_button = await ui_element_button_primary(container_output, "", async () => {
         if (m_js_equals(answer, answer_right)) {
           await on_next();
         } else {
@@ -66,7 +67,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     });
   } else {
     let next_text = `Another example, please!`;
-    let output = await ui_element_text(container, "div", "");
+    let output = await ui_element_text(container_output, "div", "");
     let green = "0,255,0";
     await ui_element_lines_monospace(output, await m_js_string_split(answer_right, "\n"), noop, "No output");
     await ui_element_style_background_color_border(output, green, 0.5, 0.2);
