@@ -26,6 +26,7 @@ import { cc_lesson_number_increment_twice } from "./number/increment/twice.mjs";
 import { cc_lesson_if_preloop } from "./if/preloop.mjs";
 import { cc_lesson_if_preloop_b } from "./if/preloop/b.mjs";
 import { cc_lesson_if_preloop_c } from "./if/preloop/c.mjs";
+import { cc_lesson_while_basic_b } from "./while/basic/b.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
@@ -62,6 +63,7 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_if_preloop_b());
   await list_add(lessons, await cc_lesson_if_preloop_c());
   await list_add(lessons, await cc_lesson_while_basic());
+  await list_add(lessons, await cc_lesson_while_basic_b());
   return result;
 
   async function module_new(module_name) {

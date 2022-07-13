@@ -13,7 +13,7 @@ export async function cc_lesson_while_basic_b() {
           console.log(x);
           x++;
         }`,
-        answers_wrong: ["", `${x}`, `${x}\n${x + 1}`, `${x}\n${x + 1}\n${y}\n${y + 1}`]
+        answers_wrong: ["", `${x}\n${x + 1}`, `${x}\n${x + 1}\n${y}\n${y + 1}`]
       };
     }
   };
