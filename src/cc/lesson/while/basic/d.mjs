@@ -4,7 +4,7 @@ import {m_js_arguments_assert} from "./../../../../../node_modules/mykro/src/m/j
 export async function cc_lesson_while_basic_d() {
   await m_js_arguments_assert()(arguments);
   return {
-    name: "let x = ...; while (...) // (3)",
+    name: "let x = ...; while (...) // (4)",
     example_get: async () => {
       let x = await cc_random_number_1_10() + 3;
       let y = x - await random_number(1, 3);
