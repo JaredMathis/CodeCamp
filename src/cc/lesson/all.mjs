@@ -28,32 +28,37 @@ import { cc_lesson_if_preloop_b } from "./if/preloop/b.mjs";
 import { cc_lesson_if_preloop_c } from "./if/preloop/c.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
-  let result = [];
-  await list_add(result, await cc_lesson_console_log_number());
-  await list_add(result, await cc_lesson_number_add());
-  await list_add(result, await cc_lesson_console_log_string());
-  await list_add(result, await cc_lesson_console_log_twice());
-  await list_add(result, await cc_lesson_let_value_assign());
-  await list_add(result, await cc_lesson_let_value_twice_b());
-  await list_add(result, await cc_lesson_let_value());
-  await list_add(result, await cc_lesson_let_value_twice());
-  await list_add(result, await cc_lesson_let_value_twice_c());
-  await list_add(result, await cc_lesson_let_twice());
-  await list_add(result, await cc_lesson_number_add_let());
-  await list_add(result, await cc_lesson_number_add_one());
-  await list_add(result, await cc_lesson_number_add_let_assign());
-  await list_add(result, await cc_lesson_number_increment());
-  await list_add(result, await cc_lesson_number_increment_twice());
-  await list_add(result, await cc_lesson_console_log_less_than_equals());
-  await list_add(result, await cc_lesson_console_log_less_than());
-  await list_add(result, await cc_lesson_if_true());
-  await list_add(result, await cc_lesson_if_false());
-  await list_add(result, await cc_lesson_if_true_false());
-  await list_add(result, await cc_lesson_if_less_than_equals());
-  await list_add(result, await cc_lesson_if_let());
-  await list_add(result, await cc_lesson_if_preloop());
-  await list_add(result, await cc_lesson_if_preloop_b());
-  await list_add(result, await cc_lesson_if_preloop_c());
-  await list_add(result, await cc_lesson_while_basic());
-  return result;
+  let lessons = [];
+  
+  await list_add(lessons, await cc_lesson_console_log_number());
+  await list_add(lessons, await cc_lesson_number_add());
+  await list_add(lessons, await cc_lesson_console_log_string());
+  await list_add(lessons, await cc_lesson_console_log_twice());
+
+  await list_add(lessons, await cc_lesson_let_value_assign());
+  await list_add(lessons, await cc_lesson_let_value_twice_b());
+  await list_add(lessons, await cc_lesson_let_value());
+  await list_add(lessons, await cc_lesson_let_value_twice());
+  await list_add(lessons, await cc_lesson_let_value_twice_c());
+  await list_add(lessons, await cc_lesson_let_twice());
+  
+  await list_add(lessons, await cc_lesson_number_add_let());
+  await list_add(lessons, await cc_lesson_number_add_one());
+  await list_add(lessons, await cc_lesson_number_add_let_assign());
+  await list_add(lessons, await cc_lesson_number_increment());
+  await list_add(lessons, await cc_lesson_number_increment_twice());
+  await list_add(lessons, await cc_lesson_console_log_less_than_equals());
+  await list_add(lessons, await cc_lesson_console_log_less_than());
+  
+  await list_add(lessons, await cc_lesson_if_true());
+  await list_add(lessons, await cc_lesson_if_false());
+  await list_add(lessons, await cc_lesson_if_true_false());
+  await list_add(lessons, await cc_lesson_if_less_than_equals());
+  await list_add(lessons, await cc_lesson_if_let());
+  
+  await list_add(lessons, await cc_lesson_if_preloop());
+  await list_add(lessons, await cc_lesson_if_preloop_b());
+  await list_add(lessons, await cc_lesson_if_preloop_c());
+  await list_add(lessons, await cc_lesson_while_basic());
+  return lessons;
 }
