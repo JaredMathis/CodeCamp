@@ -28,6 +28,7 @@ import { cc_lesson_if_preloop_b } from "./if/preloop/b.mjs";
 import { cc_lesson_if_preloop_c } from "./if/preloop/c.mjs";
 import { cc_lesson_while_basic_b } from "./while/basic/b.mjs";
 import { cc_lesson_while_basic_c } from "./while/basic/c.mjs";
+import { cc_lesson_while_basic_d } from "./while/basic/d.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
@@ -66,6 +67,7 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_while_basic());
   await list_add(lessons, await cc_lesson_while_basic_b());
   await list_add(lessons, await cc_lesson_while_basic_c());
+  await list_add(lessons, await cc_lesson_while_basic_d());
   return result;
 
   async function module_new(module_name) {
