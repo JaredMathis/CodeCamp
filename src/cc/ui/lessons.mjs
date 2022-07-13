@@ -21,8 +21,9 @@ export async function cc_ui_lessons(parent, view) {
   let span = await ui_element_text(container, "h1", "Lessons");
   let module_list = await ui_element(container, "div");
   await m_js_for_each(modules, async module => {
-    let module_title = await ui_element_text(module_list, "div", module.name);
-    let lesson_list = await ui_element(module_list, "div");
+    let module_container = await ui_element(module_list, 'div');
+    let module_title = await ui_element_text(module_container, "div", module.name);
+    let lesson_list = await ui_element(module_container, "div");
     await m_js_for_each(module.lessons, async lesson => {
       let index = await list_index_of(lessons, lesson);
       m_js_assert(m_js_true_is)(index.success);
