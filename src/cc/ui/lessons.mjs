@@ -10,6 +10,7 @@ import {ui_element_text} from "./../../../node_modules/mykro/src/ui/element/text
 import {cc_lesson_all} from "./../lesson/all.mjs";
 import {ui_html_element_is} from "./../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
+import {list_index_of} from "./../../../node_modules/mykro/src/list/index/of.mjs";
 export async function cc_ui_lessons(parent, view) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is)(arguments);
   let container = await ui_element(parent, "div");
@@ -17,16 +18,19 @@ export async function cc_ui_lessons(parent, view) {
   let lessons = await list_join(await list_map(modules, module => module["lessons"]));
   let span = await ui_element_text(container, "h1", "Lessons");
   let list = await ui_element(container, "div");
-  await m_js_for_each(lessons, async (lesson, index) => {
-    lesson.select = async () => {
-      await view.view_set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {
-        await view.view_set(async () => await cc_ui_lessons(parent, view));
-      }, async function next_lesson() {
-        let next = lessons[index + 1];
-        await next.select();
-      }));
-    };
-    await ui_element_button_primary(list, await m_js_property_get(lesson, "name"), lesson.select);
+  await m_js_for_each(modules, async module => {
+    await m_js_for_each(lessons, async lesson => {
+      let index = await list_index_of(lessons, lesson);
+      lesson.select = async () => {
+        await view.view_set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {
+          await view.view_set(async () => await cc_ui_lessons(parent, view));
+        }, async function next_lesson() {
+          let next = lessons[index + 1];
+          await next.select();
+        }));
+      };
+      await ui_element_button_primary(list, await m_js_property_get(lesson, "name"), lesson.select);
+    });
   });
   return {
     container
