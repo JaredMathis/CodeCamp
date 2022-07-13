@@ -1,3 +1,4 @@
+import {ui_element_card} from "./../../../ui/element/card.mjs";
 import {ui_element_html_inner_set} from "./../../../../node_modules/mykro/src/ui/element/html/inner/set.mjs";
 import {noop} from "./../../../../node_modules/mykro/src/noop.mjs";
 import {random_list_shuffle} from "./../../../../node_modules/mykro/src/random/list/shuffle.mjs";
@@ -33,6 +34,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     prefix = "Question";
   }
   await ui_element_text(container, "h1", prefix + " " + example_number);
+  let container_input = await ui_element_card(module_list);
   await ui_element_text(container, "div", "Input");
   const input_text = await m_js_property_get(example, "input");
   let input_lines = await m_js_string_split(input_text, "\n");
