@@ -13,7 +13,7 @@ export async function cc_ui_lesson(parent, lesson, go_back, next_lesson, module_
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_function_is, m_js_function_is, m_js_string_is)(arguments);
   let container = await ui_element(parent, "div");
   container.style.margin = 0;
-  await ui_element_text(container, "h1", `Module: ${module_name}; Lesson: ${await m_js_property_get(lesson, "name")}`);
+  await ui_element_text(container, "h1", `Lesson: (${module_name}) ${await m_js_property_get(lesson, "name")}`);
   let view = await ui_view(container);
   let index = 0;
   let is_quiz = false;
