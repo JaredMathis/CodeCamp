@@ -12,7 +12,7 @@ import {cc_lesson_all} from "./../lesson/all.mjs";
 import {ui_html_element_is} from "./../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 import {list_index_of} from "./../../../node_modules/mykro/src/list/index/of.mjs";
-import {m_js_assert} from "mykro/src/m/js/assert.mjs";
+import {m_js_assert} from "./../../../node_modules/mykro/src/m/js/assert.mjs";
 export async function cc_ui_lessons(parent, view) {
   await m_js_arguments_assert(ui_html_element_is, m_js_defined_is)(arguments);
   let container = await ui_element(parent, "div");
