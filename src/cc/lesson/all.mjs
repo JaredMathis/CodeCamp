@@ -31,6 +31,7 @@ import { cc_lesson_while_basic_c } from "./while/basic/c.mjs";
 import { cc_lesson_while_basic_d } from "./while/basic/d.mjs";
 import { cc_lesson_while_basic_e } from "./while/basic/e.mjs";
 import { cc_lesson_for_basic } from "./for/basic.mjs";
+import { cc_lesson_for_basic_b } from "./for/basic/b.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
@@ -72,6 +73,7 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_while_basic_d());
   await list_add(lessons, await cc_lesson_while_basic_e());
   await list_add(lessons, await cc_lesson_for_basic());
+  await list_add(lessons, await cc_lesson_for_basic_b());
   return result;
 
   async function module_new(module_name) {
