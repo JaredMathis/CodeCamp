@@ -1,3 +1,4 @@
+import {ui_element_card} from "./../../ui/element/card.mjs";
 import {ui_element_style_background_color_border} from "./../../../node_modules/mykro/src/ui/element/style/background/color/border.mjs";
 import {m_js_true_is} from "./../../../node_modules/mykro/src/m/js/true/is.mjs";
 import {list_map} from "./../../../node_modules/mykro/src/list/map.mjs";
@@ -22,8 +23,7 @@ export async function cc_ui_lessons(parent, view) {
   let span = await ui_element_text(container, "h1", "Lessons");
   let module_list = await ui_element(container, "div");
   await m_js_for_each(modules, async module => {
-    let module_container = await ui_element(module_list, "div");
-    await ui_element_style_background_color_border(module_container, "1,1,1", 0.1, 0.03);
+    let module_container = await ui_element_card(module_list);
     let module_title = await ui_element_text(module_container, "h2", module.name);
     let lesson_list = await ui_element(module_container, "div");
     await m_js_for_each(module.lessons, async lesson => {
