@@ -33,6 +33,7 @@ import { cc_lesson_while_basic_e } from "./while/basic/e.mjs";
 import { cc_lesson_for_basic } from "./for/basic.mjs";
 import { cc_lesson_for_basic_b } from "./for/basic/b.mjs";
 import { cc_lesson_for_basic_c } from "./for/basic/c.mjs";
+import { cc_lesson_console_log_thrice } from "./console/log/thrice.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
@@ -43,6 +44,7 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_number_add());
   await list_add(lessons, await cc_lesson_console_log_string());
   await list_add(lessons, await cc_lesson_console_log_twice());
+  await list_add(lessons, await cc_lesson_console_log_thrice());
   await module_new(`Variables`);
   await list_add(lessons, await cc_lesson_let_value_assign());
   await list_add(lessons, await cc_lesson_let_value_twice_b());
