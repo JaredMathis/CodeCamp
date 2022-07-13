@@ -69,5 +69,6 @@ export async function cc_lesson_all() {
     await list_add(result, module);
     lessons = [];
     module.lessons = lessons;
+    module.name = module_name;
   }
 }
