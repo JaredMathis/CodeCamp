@@ -28,7 +28,10 @@ import { cc_lesson_if_preloop_b } from "./if/preloop/b.mjs";
 import { cc_lesson_if_preloop_c } from "./if/preloop/c.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
-  let lessons = [];
+  let lessons;
+  let result = [];
+  
+  lessons = [];
   
   await list_add(lessons, await cc_lesson_console_log_number());
   await list_add(lessons, await cc_lesson_number_add());
