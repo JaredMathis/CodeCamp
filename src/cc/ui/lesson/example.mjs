@@ -66,12 +66,11 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
       await ui_element_lines_monospace(answer_button, await m_js_string_split(answer, "\n"), noop, "No output");
     });
   } else {
-    let next_text = `Another example, please!`;
     let output = await ui_element_text(container_output, "div", "");
     let green = "0,255,0";
     await ui_element_lines_monospace(output, await m_js_string_split(answer_right, "\n"), noop, "No output");
     await ui_element_style_background_color_border(output, green, 0.5, 0.2);
-    await ui_element_button_primary(container, next_text, on_next);
+    await ui_element_button_primary(container, `Another example, please!`, on_next);
     await ui_element_button_primary(container, "Enough examples! Quiz me!", on_quiz_me);
   }
   return {
