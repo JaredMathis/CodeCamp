@@ -28,7 +28,7 @@ export async function cc_ui_lessons(parent, view) {
     let lesson_list = await ui_element(module_container, "div");
     await m_js_for_each(module.lessons, async lesson => {
       let index = await list_index_of(lessons, lesson);
-      m_js_assert(m_js_true_is)(index.success);
+      await m_js_assert(m_js_true_is)(index.success);
       index = index.index;
       lesson.select = async () => {
         await view.view_set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {
