@@ -14,7 +14,7 @@ export async function cc_lesson_while_basic_c() {
           x++;
         }
         console.log(x);`,
-        answers_wrong: []
+        answers_wrong: [`${y}`, `${y+2}`]
       };
     }
   };
