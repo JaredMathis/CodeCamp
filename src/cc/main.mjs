@@ -7,4 +7,4 @@ export async function cc_main(parent) {
   let view = await ui_view(parent);
   await view.view_set(async () => await cc_ui_lessons(parent, view));
 }
-await cc_main(document.body);
+cc_main(document.body);
