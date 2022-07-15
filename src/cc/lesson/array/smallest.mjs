@@ -16,12 +16,18 @@ export async function cc_lesson_array_smallest() {
         }
         let array = [${list.join(", ")}];
         console.log(array_smallest(array));`,
+        input_review: `function smaller(a, b) {
+          if (a < b) return a;
+          return b;
+        }`,
         answers_wrong: await list_without(list, [await list_smallest(list)])
       };
     }
   };
   `TODO
   // Reduce lesson
+  // Smaller function
+  // Same line 
   // Calling function on object (.forEach)
   // Lesson on .forEach
   // Lesson on arrays
