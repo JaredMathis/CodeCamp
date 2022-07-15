@@ -1,5 +1,7 @@
-import {cc_values_different_generate} from "../../values/different/generate.mjs";
-import {cc_random_number_1_10} from "../../random/number/1/10.mjs";
+import {list_smallest} from "./../../../../node_modules/mykro/src/list/smallest.mjs";
+import {list_without} from "./../../../../node_modules/mykro/src/list/without.mjs";
+import {cc_values_different_generate} from "./../../values/different/generate.mjs";
+import {cc_random_number_1_10} from "./../../random/number/1/10.mjs";
 import {m_js_arguments_assert} from "mykro/src/m/js/arguments/assert.mjs";
 export async function cc_lesson_array_smallest() {
   await m_js_arguments_assert()(arguments);
@@ -12,9 +14,9 @@ export async function cc_lesson_array_smallest() {
         input: `function array_smallest(array) {
           return array.reduce(smaller);
         }
-        let array = [${list.join(', ')}];
-        console.log(array_smallest(array));
-        `
+        let array = [${list.join(", ")}];
+        console.log(array_smallest(array));`,
+        answers_wrong: await list_without(list, [await list_smallest(list)])
       };
     }
   };
@@ -25,5 +27,5 @@ export async function cc_lesson_array_smallest() {
   // Lesson on arrays
   // lesson on functions
   // Lesson on calling a function and passing that into console.log
-  `
+  `;
 }
