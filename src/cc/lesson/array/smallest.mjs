@@ -1,0 +1,29 @@
+import {cc_values_different_generate} from "../../values/different/generate.mjs";
+import {cc_random_number_1_10} from "../../random/number/1/10.mjs";
+import {m_js_arguments_assert} from "mykro/src/m/js/arguments/assert.mjs";
+export async function cc_lesson_array_smallest() {
+  await m_js_arguments_assert()(arguments);
+  return {
+    name: "function array_smallest()...",
+    example_get: async () => {
+      let list = [];
+      await cc_values_different_generate(list, 3, cc_random_number_1_10);
+      return {
+        input: `function array_smallest(array) {
+          return array.reduce(smaller);
+        }
+        let array = [${list.join(', ')}];
+        console.log(array_smallest(array));
+        `
+      };
+    }
+  };
+  `TODO
+  // Reduce lesson
+  // Calling function on object (.forEach)
+  // Lesson on .forEach
+  // Lesson on arrays
+  // lesson on functions
+  // Lesson on calling a function and passing that into console.log
+  `
+}
