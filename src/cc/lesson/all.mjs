@@ -41,6 +41,7 @@ import { cc_lesson_function_basic_call } from "./function/basic/call.mjs";
 import { cc_lesson_function_basic_call_twice } from "./function/basic/call/twice.mjs";
 import { cc_lesson_function_return } from "./function/return.mjs";
 import { cc_lesson_function_return_expression } from "./function/return/expression.mjs";
+import { cc_lesson_function_argument } from "./function/argument.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
@@ -91,6 +92,7 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_function_basic());
   await list_add(lessons, await cc_lesson_function_basic_call());
   await list_add(lessons, await cc_lesson_function_basic_call_twice());
+  await list_add(lessons, await cc_lesson_function_argument());
   await list_add(lessons, await cc_lesson_function_return());
   await list_add(lessons, await cc_lesson_function_return_expression());
   await module_new(`Sorting`);
