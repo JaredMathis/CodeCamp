@@ -8,11 +8,14 @@ export async function cc_lesson_function_if() {
       let x = await cc_random_number_1_10();
       let y = await cc_random_number_1_10();
       return {
-        input: `function log_value_bigger2() {
-          let is_bigger = ${x} > ${y};
-          console.log(is_bigger);
+        input: `function bigger2(x, y) {
+          let is_bigger = x > y;
+          if (is_bigger) {
+            return true;
+          }
+          return false;
         }
-        log_value_bigger();`,
+        console.log(bigger2(${x}, ${y}));`,
         answers_wrong: []
       };
     }
