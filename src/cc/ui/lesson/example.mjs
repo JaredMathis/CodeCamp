@@ -35,13 +35,20 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   const input_text = await m_js_property_get(example, "input");
   await cc_ui_element_code(container, "Input", input_text);
   if (await m_js_property_has(example, "input_review")) {
-    let show = await ui_element_button_secondary(container, "Input - Past Code - Show", input_review_show);
+    let show = await ui_element_button_secondary(container, "Show full input", input_review_show);
     let input_review_container = await ui_element(container, "div");
-    await ui_element_button_secondary(input_review_container, "Input - Past Code - Hide", input_review_hide);
-    await cc_ui_element_code(input_review_container, "Input - Past Code", example.input_review);
-    await ui_element_button_secondary(input_review_container, "Input - Past Code - Hide", input_review_hide);
-    function input_review_show() {}
-    function input_review_hide() {}
+    await ui_element_button_secondary(input_review_container, "Hide full input", input_review_hide);
+    await cc_ui_element_code(input_review_container, "Input", example.input_review);
+    await ui_element_button_secondary(input_review_container, "Hide full input", input_review_hide);
+    function input_review_show() {
+      input_review_container.style.display = 'block';
+      show.style.display = 'none';
+    }
+    function input_review_hide() {
+      show.style.display = 'block';
+      input_review_container.style.display = 'none';
+    }
+    input_review_hide();
   }
   let container_output = await ui_element_card(container);
   await ui_element_text(container_output, "div", "Output");
