@@ -3,16 +3,16 @@ import {m_js_arguments_assert} from "./../../../../../node_modules/mykro/src/m/j
 export async function cc_lesson_function_statement_multiple() {
   await m_js_arguments_assert()(arguments);
   return {
-    name: "function log_a_number_twice",
+    name: "function log_two_numbers",
     example_get: async () => {
       let x = await cc_random_number_1_10();
       let y = await cc_random_number_1_10();
       return {
-        input: `function log_a_number_twice() {
+        input: `function log_two_numbers() {
           console.log(${x});
           console.log(${y});
         }
-        log_a_number_twice();`,
+        log_two_numbers();`,
         answers_wrong: [``]
       };
     }
