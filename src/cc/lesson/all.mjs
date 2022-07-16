@@ -45,6 +45,7 @@ import { cc_lesson_function_argument } from "./function/argument.mjs";
 import { cc_lesson_function_argument_multiple } from "./function/argument/multiple.mjs";
 import { cc_lesson_function_return_argument } from "./function/return/argument.mjs";
 import { cc_lesson_function_return_argument_expression } from "./function/return/argument/expression.mjs";
+import { cc_lesson_function_return_argument_multiple } from "./function/return/argument/multiple.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
@@ -101,6 +102,7 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_function_return_expression());
   await list_add(lessons, await cc_lesson_function_return_argument());
   await list_add(lessons, await cc_lesson_function_return_argument_expression());
+  await list_add(lessons, await cc_lesson_function_return_argument_multiple());
   await module_new(`Sorting`);
   await list_add(lessons, await cc_lesson_array_smallest());
   return result;
