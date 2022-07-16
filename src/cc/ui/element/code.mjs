@@ -5,6 +5,7 @@ import {ui_element_text} from "./../../../../node_modules/mykro/src/ui/element/t
 import {m_js_string_is} from "./../../../../node_modules/mykro/src/m/js/string/is.mjs";
 import {ui_html_element_is} from "./../../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
+import { ui_element_lines_monospace } from "../../../ui/element/lines/monospace.mjs";
 export async function cc_ui_element_code(parent, title_text, code_text) {
   await m_js_arguments_assert(ui_html_element_is, m_js_string_is, m_js_string_is)(arguments);
   let container_input = await ui_element_card(parent);

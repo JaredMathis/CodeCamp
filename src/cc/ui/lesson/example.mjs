@@ -23,6 +23,7 @@ import {ui_color_blue} from "./../../../../node_modules/mykro/src/ui/color/blue.
 import {cc_values_different_generate} from "./../../values/different/generate.mjs";
 import {list_size} from "./../../../../node_modules/mykro/src/list/size.mjs";
 import { cc_ui_element_code } from "../element/code.mjs";
+import { ui_element_lines_monospace } from "../../../ui/element/lines/monospace.mjs";
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
   let container = await ui_element(parent, "div");
@@ -76,27 +77,6 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     let wrong_answer = await m_js_property_get(wrong, "output");
     return wrong_answer;
   }
-}
-async function ui_element_lines_monospace(container, lines, for_each_line, no_lines_message) {
-  console.log({
-    lines
-  });
-  if (m_js_equals(await list_size(lines), 1) && lines[0] === "") {
-    await ui_element_html_inner_set(container, no_lines_message);
-    container.style.fontStyle = "italic";
-  }
-  await m_js_for_each(lines, async (line_text, index) => {
-    let line = await ui_element_text(container, "div", line_text);
-    await ui_element_style_monospace(line);
-    if (index !== 0) {
-      line.style.borderTop = `0.15vh solid rgba(200,200,200,0.5)`;
-      line.style.paddingTop = "1vh";
-    }
-    if (index !== await list_max_index(lines)) {
-      line.style.paddingBottom = "1vh";
-    }
-    for_each_line(line);
-  });
 }
 function cc_example_output_generate(example) {
   const code = `
