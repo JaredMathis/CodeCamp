@@ -35,6 +35,7 @@ import { cc_lesson_for_basic_b } from "./for/basic/b.mjs";
 import { cc_lesson_for_basic_c } from "./for/basic/c.mjs";
 import { cc_lesson_console_log_thrice } from "./console/log/thrice.mjs";
 import { cc_lesson_array_smallest } from "./array/smallest.mjs";
+import { cc_lesson_while_basic_f } from "./while/basic/f.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
@@ -73,6 +74,7 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_if_preloop_c());
   await list_add(lessons, await cc_lesson_while_basic());
   await list_add(lessons, await cc_lesson_while_basic_b());
+  await list_add(lessons, await cc_lesson_while_basic_f());
   await list_add(lessons, await cc_lesson_while_basic_c());
   await list_add(lessons, await cc_lesson_while_basic_d());
   await module_new(`Looping For`);
