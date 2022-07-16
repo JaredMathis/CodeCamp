@@ -121,6 +121,8 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_function_return_argument_multiple_c());
   await list_add(lessons, await cc_lesson_function_nested());
   await list_add(lessons, await cc_lesson_function_nested_return());
+  await module_new(`Reduce`);
+  
   await module_new(`Sorting`);
   await list_add(lessons, await cc_lesson_array_smallest());
   return result;
