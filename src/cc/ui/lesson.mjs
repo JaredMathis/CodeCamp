@@ -17,9 +17,10 @@ export async function cc_ui_lesson(parent, lesson, go_back, next_lesson, module_
   let view = await ui_view(container);
   let index = 0;
   let is_quiz = false;
-  render_lesson();
   let next = await ui_element_button_secondary(container, "Next Lesson", next_lesson);
   let back = await ui_element_button_secondary(container, "Back to Lessons", go_back);
+  let footer = await ui_element(container, "div");
+  render_lesson();
   return {
     container
   };
@@ -32,7 +33,7 @@ export async function cc_ui_lesson(parent, lesson, go_back, next_lesson, module_
         is_quiz = true;
         index = 0;
         render_lesson();
-      }, is_quiz);
+      }, is_quiz, footer);
     });
   }
 }

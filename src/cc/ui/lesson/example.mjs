@@ -19,8 +19,8 @@ import {list_add_all} from "./../../../../node_modules/mykro/src/list/add/all.mj
 import {cc_values_different_generate} from "./../../values/different/generate.mjs";
 import { cc_ui_element_code } from "../element/code.mjs";
 import { ui_element_lines_monospace } from "../../../ui/element/lines/monospace.mjs";
-export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
-  await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
+export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz, footer) {
+  await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is, ui_html_element_is)(arguments);
   let container = await ui_element(parent, "div");
   container.style.margin = 0;
   let example = await example_get();
@@ -36,6 +36,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   let container_output = await ui_element_card(container);
   await ui_element_text(container_output, "div", "Output");
   let answer_right = await m_js_property_get(example, "output");
+  console.log('ar', answer_right)
   if (is_quiz) {
     let answers = [answer_right];
     if (await m_js_property_has(example, "answers_wrong")) {
@@ -63,6 +64,9 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     await ui_element_button_primary(container, `Another example, please!`, on_next);
     await ui_element_button_primary(container, "Enough examples! Quiz me!", on_quiz_me);
   }
+  if (await m_js_property_has(example, 'input_review')) {
+    await cc_ui_element_code(footer, "Review Past Code", example.input_review)
+  }
   return {
     container
   };
@@ -82,6 +86,7 @@ function cc_example_output_generate(example) {
   }
   console_log_new.outputs = [];
   ${example.input}
+  ${example.input_review || ''}
   console.log = console_log_old;
   console_log_new.outputs.join('\\n');
   `;
