@@ -9,7 +9,7 @@ export async function cc_lesson_function_argument_multiple_expression() {
       let y = await cc_random_number_1_10();
       return {
         input: `function log_value_bigger3(x, y) {
-          let is_bigger x > y;
+          let is_bigger = x > y;
           console.log(is_bigger);
         }
         log_value_bigger3(${x}, ${y});`
