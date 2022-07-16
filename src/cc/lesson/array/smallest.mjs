@@ -25,6 +25,8 @@ export async function cc_lesson_array_smallest() {
     }
   };
   `TODO
+  // function lesson
+  // smaller lesson
   // Reduce lesson
   // Smaller function
   // Same line 
