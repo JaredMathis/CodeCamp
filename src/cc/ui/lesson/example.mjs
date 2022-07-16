@@ -36,7 +36,7 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
   await cc_ui_element_code(container, "Input", input_text);
   if (await m_js_property_has(example, "input_review")) {
     let show = await ui_element_button_secondary(container, "Input - Past Code - Show", input_review_show);
-    let input_review_container = ui_element(container, "div");
+    let input_review_container = await ui_element(container, "div");
     await ui_element_button_secondary(input_review_container, "Input - Past Code - Hide", input_review_hide);
     await cc_ui_element_code(input_review_container, "Input - Past Code", example.input_review);
     await ui_element_button_secondary(input_review_container, "Input - Past Code - Hide", input_review_hide);
