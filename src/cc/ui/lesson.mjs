@@ -9,8 +9,8 @@ import {m_js_property_get} from "./../../../node_modules/mykro/src/m/js/property
 import {m_js_function_is} from "./../../../node_modules/mykro/src/m/js/function/is.mjs";
 import {ui_view} from "./../../../node_modules/mykro/src/ui/view.mjs";
 import {m_js_string_is} from "./../../../node_modules/mykro/src/m/js/string/is.mjs";
-export async function cc_ui_lesson(parent, lesson, go_back, next_lesson, module_name) {
-  await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_function_is, m_js_function_is, m_js_string_is)(arguments);
+export async function cc_ui_lesson(parent, lesson, go_back, previous_lesson, next_lesson, module_name) {
+  await m_js_arguments_assert(ui_html_element_is, m_js_defined_is, m_js_function_is, m_js_function_is, m_js_function_is, m_js_string_is)(arguments);
   let container = await ui_element(parent, "div");
   container.style.margin = 0;
   await ui_element_text(container, "h1", `Lesson: (${module_name}) ${await m_js_property_get(lesson, "name")}`);
@@ -18,7 +18,8 @@ export async function cc_ui_lesson(parent, lesson, go_back, next_lesson, module_
   let index = 0;
   let is_quiz = false;
   let next = await ui_element_button_secondary(container, "Next Lesson", next_lesson);
-  let back = await ui_element_button_secondary(container, "Back to Lessons", go_back);
+  let previous = await ui_element_button_secondary(container, "Previous Lesson", previous_lesson);
+  let back = await ui_element_button_secondary(container, "Back to all Lessons", go_back);
   let footer = await ui_element(container, "div");
   render_lesson();
   return {

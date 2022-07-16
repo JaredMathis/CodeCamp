@@ -33,6 +33,9 @@ export async function cc_ui_lessons(parent, view) {
       lesson.select = async () => {
         await view.view_set(async () => await cc_ui_lesson(parent, lesson, async function go_back() {
           await view.view_set(async () => await cc_ui_lessons(parent, view));
+        }, async function previous_lesson() {
+          let previous = lessons[index - 1];
+          await previous.select();
         }, async function next_lesson() {
           let next = lessons[index + 1];
           await next.select();
