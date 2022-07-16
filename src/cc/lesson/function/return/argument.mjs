@@ -7,8 +7,8 @@ export async function cc_lesson_function_return_argument() {
     example_get: async () => {
       let x = await cc_random_number_1_10();
       return {
-        input: `function identity(a) {
-          return a;
+        input: `function identity(value) {
+          return value;
         }
         console.log(identity(${x}));`,
         answers_wrong: [`${x}`]
