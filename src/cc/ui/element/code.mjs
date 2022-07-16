@@ -1,8 +1,9 @@
+import {ui_element_card} from "./../../../ui/element/card.mjs";
 import {ui_element_style_background_color_border} from "./../../../../node_modules/mykro/src/ui/element/style/background/color/border.mjs";
 import {m_js_string_split} from "./../../../../node_modules/mykro/src/m/js/string/split.mjs";
 import {ui_element_text} from "./../../../../node_modules/mykro/src/ui/element/text.mjs";
-import {m_js_string_is} from "mykro/src/m/js/string/is.mjs";
-import {ui_html_element_is} from "mykro/src/ui/html/element/is.mjs";
+import {m_js_string_is} from "./../../../../node_modules/mykro/src/m/js/string/is.mjs";
+import {ui_html_element_is} from "./../../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 export async function cc_ui_element_code(parent, title_text, code_text) {
   await m_js_arguments_assert(ui_html_element_is, m_js_string_is)(arguments);
