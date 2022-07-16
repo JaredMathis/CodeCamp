@@ -20,7 +20,6 @@ export async function cc_ui_lesson(parent, lesson, go_back, previous_lesson, nex
   let next = await ui_element_button_secondary(container, "Next Lesson", next_lesson);
   let previous = await ui_element_button_secondary(container, "Previous Lesson", previous_lesson);
   let back = await ui_element_button_secondary(container, "Back to all Lessons", go_back);
-  let footer = await ui_element(container, "div");
   render_lesson();
   return {
     container
@@ -34,7 +33,7 @@ export async function cc_ui_lesson(parent, lesson, go_back, previous_lesson, nex
         is_quiz = true;
         index = 0;
         render_lesson();
-      }, is_quiz, footer);
+      }, is_quiz);
     });
   }
 }
