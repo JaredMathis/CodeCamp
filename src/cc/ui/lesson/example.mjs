@@ -1,5 +1,4 @@
 import {ui_element_card} from "./../../../ui/element/card.mjs";
-import {ui_element_html_inner_set} from "./../../../../node_modules/mykro/src/ui/element/html/inner/set.mjs";
 import {noop} from "./../../../../node_modules/mykro/src/noop.mjs";
 import {random_list_shuffle} from "./../../../../node_modules/mykro/src/random/list/shuffle.mjs";
 import {m_js_equals} from "./../../../../node_modules/mykro/src/m/js/equals.mjs";
@@ -9,19 +8,15 @@ import {m_js_function_is} from "./../../../../node_modules/mykro/src/m/js/functi
 import {ui_element_style_background_color_border} from "./../../../../node_modules/mykro/src/ui/element/style/background/color/border.mjs";
 import {ui_element_text} from "./../../../../node_modules/mykro/src/ui/element/text.mjs";
 import {m_js_number_is} from "./../../../../node_modules/mykro/src/m/js/number/is.mjs";
-import {ui_element_style_monospace} from "./../../../../node_modules/mykro/src/ui/element/style/monospace.mjs";
 import {m_js_property_get} from "./../../../../node_modules/mykro/src/m/js/property/get.mjs";
 import {ui_element} from "./../../../../node_modules/mykro/src/ui/element.mjs";
 import {ui_html_element_is} from "./../../../../node_modules/mykro/src/ui/html/element/is.mjs";
 import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 import {m_js_for_each} from "./../../../../node_modules/mykro/src/m/js/for/each.mjs";
 import {m_js_string_split} from "./../../../../node_modules/mykro/src/m/js/string/split.mjs";
-import {list_max_index} from "./../../../../node_modules/mykro/src/list/max/index.mjs";
 import {m_js_property_has} from "./../../../../node_modules/mykro/src/m/js/property/has.mjs";
 import {list_add_all} from "./../../../../node_modules/mykro/src/list/add/all.mjs";
-import {ui_color_blue} from "./../../../../node_modules/mykro/src/ui/color/blue.mjs";
 import {cc_values_different_generate} from "./../../values/different/generate.mjs";
-import {list_size} from "./../../../../node_modules/mykro/src/list/size.mjs";
 import { cc_ui_element_code } from "../element/code.mjs";
 import { ui_element_lines_monospace } from "../../../ui/element/lines/monospace.mjs";
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
