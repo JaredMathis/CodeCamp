@@ -8,10 +8,10 @@ export async function cc_lesson_function_return_argument_multiple_c() {
       let x = await cc_random_number_1_10();
       let y = await cc_random_number_1_10();
       return {
-        input: `function bigger(a, b) {
-          return a > b;
+        input: `function smaller(a, b) {
+          return a < b;
         }
-        console.log(bigger(${x}, ${y}));`
+        console.log(smaller(${x}, ${y}));`
       };
     }
   };
