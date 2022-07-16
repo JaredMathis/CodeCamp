@@ -9,11 +9,11 @@ export async function cc_lesson_function_expression() {
       let y = await cc_random_number_1_10();
       return {
         input: `function log_value_bigger2() {
-          let is_bigger = ${x} > ${x};
+          let is_bigger = ${x} > ${y};
           console.log(is_bigger);
         }
         log_value_bigger2();`,
-        answers_wrong: [`${x}`, `${y}`]
+        answers_wrong: []
       };
     }
   };
