@@ -11,7 +11,7 @@ export async function cc_lesson_function_argument_multiple() {
         input: `function log_sum_of_values(a, b) {
           console.log(a + b);
         }
-        console.log(log_sum_of_values(${x}, ${y}));`,
+        log_sum_of_values(${x}, ${y});`,
         answers_wrong: [`${x}`, `${y}`]
       };
     }
