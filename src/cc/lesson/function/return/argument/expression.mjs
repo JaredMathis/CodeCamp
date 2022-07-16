@@ -3,12 +3,12 @@ import {m_js_arguments_assert} from "./../../../../../../node_modules/mykro/src/
 export async function cc_lesson_function_return_argument_expression() {
   await m_js_arguments_assert()(arguments);
   return {
-    name: "function identity",
+    name: "function add_one",
     example_get: async () => {
       let x = await cc_random_number_1_10();
       return {
         input: `function add_one(value) {
-          return x + 1;
+          return value + 1;
         }
         console.log(add_one(${x}));`,
         answers_wrong: [`${x}`]
