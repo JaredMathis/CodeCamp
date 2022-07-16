@@ -11,7 +11,7 @@ export async function cc_lesson_function_basic_call_b() {
         input: `function log_value_bigger() {
           console.log(${x} > ${x});
         }
-        console.log(log_value_bigger());`,
+        log_value_bigger();`,
         answers_wrong: [`${x}`, `${y}`]
       };
     }
