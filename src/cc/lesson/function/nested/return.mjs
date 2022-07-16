@@ -1,3 +1,4 @@
+import {cc_random_number_1_10} from "./../../../random/number/1/10.mjs";
 import {m_js_arguments_assert} from "./../../../../../node_modules/mykro/src/m/js/arguments/assert.mjs";
 export async function cc_lesson_function_nested_return() {
   await m_js_arguments_assert()(arguments);
