@@ -11,7 +11,7 @@ export async function cc_lesson_function_basic_call() {
           console.log(${x});
         }
         log();`,
-        answers_wrong: [`${x}`]
+        answers_wrong: [``]
       };
     }
   };
