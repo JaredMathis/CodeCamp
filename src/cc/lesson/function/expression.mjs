@@ -12,7 +12,7 @@ export async function cc_lesson_function_expression() {
           let is_bigger = ${x} > ${x};
           console.log(is_bigger);
         }
-        log_value_bigger();`,
+        log_value_bigger2();`,
         answers_wrong: [`${x}`, `${y}`]
       };
     }
