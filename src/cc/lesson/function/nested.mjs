@@ -11,9 +11,9 @@ export async function cc_lesson_function_nested() {
         input: `function log_then_sum(x, y) {
           console.log(x);
           console.log(y);
-          return sum(x, y);
+          console.log(sum(x, y));
         }
-        console.log(log_then_sum(${x}, ${y}));`,
+        log_then_sum(${x}, ${y});`,
         input_review: `function sum(a, b) {
           return a + b;
         }`
