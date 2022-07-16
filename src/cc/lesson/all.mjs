@@ -52,6 +52,7 @@ import { cc_lesson_function_argument_expression } from "./function/argument/expr
 import { cc_lesson_function_argument_multiple_expression } from "./function/argument/multiple/expression.mjs";
 import { cc_lesson_function_nested } from "./function/nested.mjs";
 import { cc_lesson_function_nested_return } from "./function/nested/return.mjs";
+import { cc_lesson_function_statement_multiple } from "./function/statement/multiple.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
@@ -101,6 +102,7 @@ export async function cc_lesson_all() {
   await module_new(`Functions`);
   await list_add(lessons, await cc_lesson_function_basic());
   await list_add(lessons, await cc_lesson_function_basic_call());
+  await list_add(lessons, await cc_lesson_function_statement_multiple());
   await list_add(lessons, await cc_lesson_function_basic_call_twice());
   await list_add(lessons, await cc_lesson_function_basic_call_b());
   await list_add(lessons, await cc_lesson_function_expression());
