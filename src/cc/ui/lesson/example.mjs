@@ -22,6 +22,7 @@ import {list_add_all} from "./../../../../node_modules/mykro/src/list/add/all.mj
 import {ui_color_blue} from "./../../../../node_modules/mykro/src/ui/color/blue.mjs";
 import {cc_values_different_generate} from "./../../values/different/generate.mjs";
 import {list_size} from "./../../../../node_modules/mykro/src/list/size.mjs";
+import { cc_ui_element_code } from "../element/code.mjs";
 export async function cc_ui_lesson_example(parent, example_get, example_number, on_next, on_quiz_me, is_quiz) {
   await m_js_arguments_assert(ui_html_element_is, m_js_function_is, m_js_number_is, m_js_function_is, m_js_function_is, m_js_boolean_is)(arguments);
   let container = await ui_element(parent, "div");
@@ -34,15 +35,8 @@ export async function cc_ui_lesson_example(parent, example_get, example_number, 
     prefix = "Question";
   }
   await ui_element_text(container, "h1", prefix + " " + example_number);
-  let container_input = await ui_element_card(container);
-  await ui_element_text(container_input, "div", "Input");
   const input_text = await m_js_property_get(example, "input");
-  let input_lines = await m_js_string_split(input_text, "\n");
-  let input = await ui_element_text(container_input, "div", "");
-  await ui_element_lines_monospace(input, input_lines, line => line.style.color = "white", "TODO");
-  await ui_element_style_background_color_border(input, "0,0,0", 1, 1);
-  input.style.overflowWrap = "break-word";
-  input.style.color = "white";
+  await cc_ui_element_code(container, "Input", input_text)
   let container_output = await ui_element_card(container);
   await ui_element_text(container_output, "div", "Output");
   let answer_right = await m_js_property_get(example, "output");
