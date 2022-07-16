@@ -13,17 +13,21 @@ export async function cc_lesson_array_reduce() {
       return {
         input: `function array_reduce(array, reducer) {
           let result = array_first(array);
-          array_for_each_skip_first(array, item => {
+          array_skip_first(array, item => {
             result = reducer(result, item);
           });
           return result;
         }
         let array = [${list.join(", ")}];
-        console.log(array_smallest(array));`,
-        input_review: `function array_first(array) {
+        console.log(array_reduce(array, smaller));`,
+        input_review: `function smaller(a, b) {
+          if (a < b) return a;
+          return b;
+        }
+        function array_first(array) {
           return array[0];
         }
-        function array_for_each_skip_first(array, for_each_item) {
+        function array_skip_first(array, for_each_item) {
           for (let i = 1; i < array.length; i++) {
             let item = array[i];
             for_each_item(item);
