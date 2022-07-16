@@ -36,6 +36,7 @@ import { cc_lesson_for_basic_c } from "./for/basic/c.mjs";
 import { cc_lesson_console_log_thrice } from "./console/log/thrice.mjs";
 import { cc_lesson_array_smallest } from "./array/smallest.mjs";
 import { cc_lesson_while_basic_f } from "./while/basic/f.mjs";
+import { cc_lesson_function_basic } from "./function/basic.mjs";
 export async function cc_lesson_all() {
   await m_js_arguments_assert()(arguments);
   let lessons;
@@ -82,6 +83,8 @@ export async function cc_lesson_all() {
   await list_add(lessons, await cc_lesson_for_basic());
   await list_add(lessons, await cc_lesson_for_basic_b());
   await list_add(lessons, await cc_lesson_for_basic_c());
+  await module_new(`Functions`);
+  await list_add(lessons, await cc_lesson_function_basic());
   await module_new(`Sorting`);
   await list_add(lessons, await cc_lesson_array_smallest());
   return result;
