@@ -6,7 +6,7 @@ import {m_js_arguments_assert} from "./../../../../node_modules/mykro/src/m/js/a
 export async function cc_lesson_array_smallest() {
   await m_js_arguments_assert()(arguments);
   return {
-    name: "function array_smallest()...",
+    name: "function array_smallest",
     example_get: async () => {
       let list = [];
       await cc_values_different_generate(list, 3, cc_random_number_1_10);
@@ -25,10 +25,7 @@ export async function cc_lesson_array_smallest() {
     }
   };
   `TODO
-  // function lesson
-  // smaller lesson
   // Reduce lesson
-  // Smaller function
   // Same line 
   // Calling function on object (.forEach)
   // Lesson on .forEach
